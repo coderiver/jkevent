@@ -46,20 +46,19 @@
 // 	+png(blabla)
 // p
 // 	+jpg(bla)
-+font(OpenSans-Regular, OpenSans-Regular)
-+font(OpenSans-Light, OpenSans-Light)
-+font(ProximaNova-Bold, ProximaNova-Bold)
-+font(ptsans-regular, ptsans-regular)
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300)
+@import url(http://fonts.googleapis.com/css?family=PT+Sans&subset=cyrillic,latin)
 
 =osr
-	font-family: "OpenSans-Regular", Arial, sans-serif
-=osl
-	font-family: "OpenSans-Light", Arial, sans-serif
-=pts
-	font-family: "ptsans-regular", Arial, sans-serif
+	font-family: 'Open Sans', sans-serif
 	font-weight: normal
-=pnb
-	font-family: "ProximaNova-Bold", Arial, sans-serif
+=osl
+	font-family: 'Open Sans', sans-serif
+	font-weight: 100
+=pts
+	font-family: 'PT Sans', sans-serif
+	font-weight: normal
 
 // colors
 $vinous: #5c1d0c
@@ -71,7 +70,7 @@ html
 	font-size: 62.5%
 
 body
-	font-family: "OpenSans-Regular", Arial, sans-serif
+	+osr
 	font-size: 12px
 	line-height: 1.2
 

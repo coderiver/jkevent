@@ -2,26 +2,25 @@
 .page
 	height: 100vh
 	border-bottom: 1px solid #eaedee
+	position: relative
 	&.page_first
-		background-image: url('../img/page1.jpg')
-		+cover
+		background: url('../img/firstpage.jpg') 50% 0 no-repeat
+		background-size: cover
+
 	&.page_last
+		background: url('../img/lastpage.jpg') 50% 0 no-repeat
+		background-size: cover
 
 
 .header
 	margin: auto
 	padding-top: 16px
 	width: 100%
-	&:before
-		content: ""
-		display: inline-block
-		vertical-align: middle
-		height: 100%
 	.header__logo
-		display: inline-block
+		display: block
 		vertical-align: middle
 		+s(logo)
-		margin: 0 26px
+		margin: auto
 .nav
 	li
 		display: inline-block
@@ -33,12 +32,27 @@
 		text-transform: uppercase
 		color: $vinous
 		+fs(14)
+		vertical-align: baseline
 		&:hover
 			color: $red
 	.nav__left,
 	.nav__right
-		display: inline-block
-		vertical-align: middle
+		display: block
+		position: absolute
+		top: 0
+		font-size: 0
+	.nav__left
+		right: 50%
+		text-align: right
+		margin-right: 100px
+	.nav__right
+		left: 50%
+		margin-left: 100px
+	.header &
+		position: relative
+		line-height: 140px
+		li
+			font-size: 0
 	.footer &
 		float: left
 		margin: 17px 0
@@ -51,6 +65,7 @@
 	+fs(48)
 	color: $dark
 	line-height: 1
+	letter-spacing: -0.1rem
 	padding: 50px 0
 	&.title_head
 		+fs(62)
@@ -60,13 +75,21 @@
 		color: $vinous
 
 
-.move-down
+.move-down,
+.move-up
 	display: block
-	+s(down)
 	position: absolute
-	bottom: 215px
 	left: 50%
 	margin-left: -30px
+	opacity: 0.8
+	&:hover
+		opacity: 1
+.move-down
+	+s(down)
+	bottom: 215px
+.move-up
+	+s(up)
+	bottom: 29px
 
 .pagi
 	position: fixed
@@ -74,11 +97,11 @@
 	right: 27px
 	margin-right: -7px
 	margin-top: -51px
+	width: 13px
 	li
 		text-align: center
 		margin-bottom: 3px
-		width: 14px
-		line-height: 14px
+		height: 13px
 	a
 		display: inline-block
 		vertical-align: middle
@@ -87,14 +110,20 @@
 		height: 6px
 		border-radius: 50%
 		&.is-active
-			width: 13px
-			height: 13px
+			width: 100%
+			height: 100%
 			background: transparent
 			border: 1px solid $vinous
 			+box
+	&.is-white
+		a
+			background: #FFF
+			&.is-active
+				background: transparent
+				border-color: #FFF
 
 .footer
-	position: fixed
+	// position: fixed
 	bottom: 0
 	left: 0
 	right: 0
@@ -110,6 +139,7 @@
 		padding: 13px 0
 		border-bottom: 1px solid #f2f2f2
 		text-align: center
+		position: relative
 		+clr
 	.footer__offers
 		display: block
@@ -154,6 +184,9 @@
 		+fs(12)
 		color: $blue
 		margin-top: 5px
+		text-decoration: none
+		&:hover
+			text-decoration: underline
 
 .social
 	float: right
@@ -207,10 +240,194 @@
 
 .offers
 	margin-top: 10px
+	float: left
+	margin: 10px 13px 30px
 	.offers__title
 		+fs(24)
 		font-weight: normal
 		color: #444
+		margin-bottom: 30px
+		text-align: center
+	.offers__container
+		width: 300px
+		height: 400px
+		box-shadow: 0 0 35px 0 rgba(6,6,6,.15)
+		img
+			display: block
+			max-width: 100%
+
+.offers__hint
+	display: block
+	text-align: center
+	margin-top: 40px
+	color: $dark
+	+fs(14)
+	clear: both
+	i
+		display: inline-block
+		+s(hint)
+		vertical-align: middle
+		margin-right: 10px
+		position: relative
+		top: -1px
+
+.reviews
+	color: $dark
+	width: 550px
+	margin: auto
+	+osl
+	.reviews__pic
+		margin: 0 auto
+		width: 150px
+		height: 150px
+		border-radius: 50%
+		overflow: hidden
+		margin-bottom: 30px
+		box-shadow: 0 0 35px 0 rgba(6,6,6,.15)
+		img
+			display: block
+			max-width: 100%
+	.reviews__name
+		+fs(18)
+		display: block
+		text-align: center
+		position: relative
+		padding-bottom: 15px
+		margin-bottom: 20px
+		&:after
+			content: ""
+			display: block
+			width: 85px
+			height: 1px
+			background: #ececec
+			position: absolute
+			bottom: 0
+			left: 50%
+			margin-left: -42.5px
+	.reviews__text
+		+fs(28)
+		line-height: 1.214
+		display: block
+		text-align: center
+	.reviews__pagi
+		margin: 65px auto 0
+		font-size: 0
+		text-align: center
+		li
+			display: inline-block
+			margin-right: 35px
+			&:last-child
+				margin-right: 0
+		.reviews__pagi-item
+			text-decoration: none
+			display: block
+			width: 57px
+			height: 57px
+			border-radius: 50%
+			overflow: hidden
+			opacity: 0.2
+			img
+				display: block
+				max-width: 100%
+			&.is-active
+				opacity: 1
+
+.share
+	position: relative
+	+fs(18)
+	color: #FFF
+	line-height: 66px
+	.share__left
+		position: absolute
+		top: 0
+		right: 50%
+		text-align: right
+		margin-right: 48px
+	.share__right
+		position: absolute
+		top: 0
+		left: 50%
+		margin-left: 48px
+	.share__center
+		display: block
+		margin: auto
+		line-height: 60px
+		text-decoration: none
+		color: #FFF
+		+fs(28)
+		text-align: center
+		+s(share)
+		position: relative
+		top: 3px
+
+.contacts
+	+fs(20)
+	line-height: 1.4
+	margin: 55px 15px 55px 0
+	text-align: right
+	a
+		color: #FFF
+		text-decoration: none
+		&:hover
+			text-decoration: underline
+	li
+		display: inline-block
+		margin-right: 50px
+		padding-right: 28px
+		border-right: 1px solid #b2aea9
+		text-align: left
+		&:last-child
+			margin-right: 0
+			padding-right: 0
+			border-right: none
+	.contacts__tel,
+	.contacts__location,
+	.contacts__email,
+	.contacts__link
+		position: relative
+		&:before
+			content: ""
+			display: block
+			position: absolute
+			top: 6px
+			left: -17px
+	.contacts__tel
+		&:before
+			+s(tel)
+	.contacts__location
+		&:before
+			+s(location)
+	.contacts__email
+		&:before
+			+s(email)
+			left: -28px
+	.contacts__link
+		&:before
+			+s(link)
+			left: -25px
+
+.creator
+	color: #FFF
+	display: block
+	text-align: right
+	+osl
+	+fs(14)
+	line-height: 1.4
+	margin: 55px 13px 40px 0
+	a
+		color: #FFF
+		text-decoration: none
+		&:hover
+			text-decoration: underline
+
+.lastpage-wrap
+	position: absolute
+	left: 0
+	right: 0
+	bottom: 0
+	width: 980px
+	margin: auto
+
 
 
 
