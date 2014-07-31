@@ -9,10 +9,9 @@
 </head>
 <body>
 
-<!-- BEGIN page -->
-<div class="page page_first">
-	<!-- BEGIN header -->
-	<header class="header">
+<!-- BEGIN header -->
+<header class="header">
+	<div class="l-center">
 		<!-- BEGIN nav -->
 		<div class="nav">
 			<ul class="nav__left">
@@ -24,22 +23,33 @@
 			<ul class="nav__right">
 				<li><a href="#">Отзывы</a></li>
 				<li><a href="#">Контакты</a></li>
-				<li><a class="nav__tel" href="tel:+78462313991">+7 (846) 231-39-91</a></li>
+				<li>
+					<a class="header__tel" href="tel:+78462313991">+7 (846) 231-39-91</a>
+					<div class="social" hidden>
+						<a href="#" class="icon icon_fb"></a>
+						<a href="#" class="icon icon_vk"></a>
+						<a href="#" class="icon icon_instagram"></a>
+						<a href="#" class="icon icon_vimeo"></a>
+					</div>
+				</li>
 			</ul>
 		</div>
 		<!-- END nav -->
-	</header>
-	<!-- END header -->
+	</div>
+</header>
+<!-- END header -->
 
+<!-- BEGIN page -->
+<div id="page1" class="page page_first">
 	<div class="l-center">
 		<h1 class="title title_head">Сделаем вашу свадьбу<br>неповторимой!</h1>
-		<a href="#" class="move-down"></a>
 	</div>
+		<a href="#page6" class="move-down"></a>
 </div>
 <!-- END page -->
 
 <!-- BEGIN page -->
-<div class="page">
+<div id="page2" class="page">
 	<div class="l-center">
 		<h2 class="title">Невероятные кадры наших фотографов</h2>
 		<!-- BEGIN gallery -->
@@ -60,7 +70,7 @@
 <!-- END page -->
 
 <!-- BEGIN page -->
-<div class="page">
+<div id="page3" class="page">
 	<div class="l-center">
 		<h2 class="title">Роскошный видеоряд</h2>
 		<!-- BEGIN gallery -->
@@ -77,7 +87,7 @@
 <!-- END page -->
 
 <!-- BEGIN page -->
-<div class="page">
+<div  id="page4" class="page">
 	<div class="l-center">
 		<h2 class="title">Предлагаем полный комплекс свадебных услуг</h2>
 		<!-- BEGIN offers -->
@@ -106,7 +116,7 @@
 <!-- END page -->
 
 <!-- BEGIN page -->
-<div class="page">
+<div  id="page5" class="page">
 	<div class="l-center">
 		<h2 class="title">Наши клиенты самые счастливые</h2>
 		<!-- BEGIN reviews -->
@@ -130,7 +140,7 @@
 <!-- END page -->
 
 <!-- BEGIN page -->
-<div class="page page_last">
+<div  id="page6" class="page page_last">
 	<div class="l-center">
 		<div class="lastpage-wrap">
 			<!-- BEGIN share -->
@@ -155,7 +165,7 @@
 				</li>
 			</ul>
 			<!-- END contacts -->
-			<a href="#" class="move-up"></a>
+			<a href="#page1" class="move-up"></a>
 			<span class="creator">Создание сайта<br><a href="#">DOBRO</a></span>
 		</div>
 	</div>
@@ -164,12 +174,12 @@
 
 <!-- BEGIN pagi -->
 <ul class="pagi">
-	<li><a href="#" class="is-active"></a></li>
-	<li><a href="#"></a></li>
-	<li><a href="#"></a></li>
-	<li><a href="#"></a></li>
-	<li><a href="#"></a></li>
-	<li><a href="#"></a></li>
+	<li><a href="#page1" class="is-active"></a></li>
+	<li><a href="#page2"></a></li>
+	<li><a href="#page3"></a></li>
+	<li><a href="#page4"></a></li>
+	<li><a href="#page5"></a></li>
+	<li><a href="#page6"></a></li>
 </ul>
 <!-- END pagi -->
 
@@ -190,27 +200,31 @@
 		</div>
 	</div>
 	<!-- END footer__top -->
-	<div class="l-center">
-		<a href="#" class="footer__logo"></a>
-		<!-- BEGIN nav -->
-		<div class="nav">
-			<ul>
-				<li><a href="#">Свадебные пакеты</a></li>
-				<li><a href="#">Фотосъемка</a></li>
-				<li><a href="#">Видеосъемка</a></li>
-				<li><a href="#">Отзывы</a></li>
-				<li><a href="#">Контакты</a></li>
-				<li><a class="nav__tel" href="tel:+78462313991">+7 (846) 231-39-91</a></li>
-			</ul>
-		</div>
-		<!-- END nav -->
-		<div class="social">
-			<a href="#" class="icon icon_fb"></a>
-			<a href="#" class="icon icon_vk"></a>
-			<a href="#" class="icon icon_instagram"></a>
-			<a href="#" class="icon icon_vimeo"></a>
+	<!-- BEGIN footer__bottom -->
+	<div class="footer__bottom">
+		<div class="l-center">
+			<a href="#" class="footer__logo"></a>
+			<!-- BEGIN nav -->
+			<div class="nav">
+				<ul>
+					<li><a href="#">Свадебные пакеты</a></li>
+					<li><a href="#">Фотосъемка</a></li>
+					<li><a href="#">Видеосъемка</a></li>
+					<li><a href="#">Отзывы</a></li>
+					<li><a href="#">Контакты</a></li>
+					<li><a class="nav__tel" href="tel:+78462313991">+7 (846) 231-39-91</a></li>
+				</ul>
+			</div>
+			<!-- END nav -->
+			<div class="social">
+				<a href="#" class="icon icon_fb"></a>
+				<a href="#" class="icon icon_vk"></a>
+				<a href="#" class="icon icon_instagram"></a>
+				<a href="#" class="icon icon_vimeo"></a>
+			</div>
 		</div>
 	</div>
+	<!-- END footer__bottom -->
 </footer>
 <!-- END footer -->
 

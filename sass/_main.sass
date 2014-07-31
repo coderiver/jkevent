@@ -1,6 +1,6 @@
 // Normally mainpage styles
 .page
-	height: 100vh
+	min-height: 100%
 	border-bottom: 1px solid #eaedee
 	position: relative
 	&.page_first
@@ -11,8 +11,13 @@
 		background: url('../img/lastpage.jpg') 50% 0 no-repeat
 		background-size: cover
 
+.is-hidden
+	display: none
 
 .header
+	position: fixed
+	top: 0
+	z-index: 2
 	margin: auto
 	padding-top: 16px
 	width: 100%
@@ -21,6 +26,16 @@
 		vertical-align: middle
 		+s(logo)
 		margin: auto
+	.header__tel
+		padding-left: 14px
+		position: relative
+		&:before
+			content: ""
+			display: block
+			+s(telred)
+			position: absolute
+			top: 4px
+			left: 0
 .nav
 	li
 		display: inline-block
@@ -41,6 +56,7 @@
 		position: absolute
 		top: 0
 		font-size: 0
+		white-space: nowrap
 	.nav__left
 		right: 50%
 		text-align: right
@@ -69,8 +85,7 @@
 	padding: 50px 0
 	&.title_head
 		+fs(62)
-		margin-top: 84px
-		padding: 0
+		padding-top: 84px +140px
 		line-height: 1.03
 		color: $vinous
 
@@ -97,33 +112,34 @@
 	right: 27px
 	margin-right: -7px
 	margin-top: -51px
-	width: 13px
+	width: 14px
 	li
 		text-align: center
 		margin-bottom: 3px
-		height: 13px
+		height: 14px
 	a
 		display: inline-block
 		vertical-align: middle
-		background: $vinous
+		background: #FFF
 		width: 6px
 		height: 6px
 		border-radius: 50%
+		+transition(background .2s linear)
 		&.is-active
 			width: 100%
 			height: 100%
 			background: transparent
-			border: 1px solid $vinous
+			border: 1px solid #FFF
 			+box
-	&.is-white
+	&.is-dark
 		a
-			background: #FFF
+			background: $vinous
 			&.is-active
 				background: transparent
-				border-color: #FFF
+				border-color: $vinous
 
 .footer
-	// position: fixed
+	position: fixed
 	bottom: 0
 	left: 0
 	right: 0
@@ -154,16 +170,15 @@
 		text-align: center
 		+box
 		position: absolute
-		top: 23px
+		top: 10px
 		left: 50%
 		margin-left: -145px
-
 
 .person
 	+clr
 	text-align: left
 	float: left
-	width: 300px
+	width: 320px
 	.person__pic
 		overflow: hidden
 		width: 56px
@@ -205,6 +220,10 @@
 		+s(instagram)
 	.icon_vimeo
 		+s(vimeo)
+	.header &
+		float: none
+		.icon:not(:last-child)
+			margin-right: 3px
 
 .gallery
 	position: relative
