@@ -16,7 +16,7 @@ head.ready(function() {
 
 	function paginator() {
 		$(".page").each(function(){
-			var pos = $(this).offset().top;
+			var pos = $(this).offset().top - $(this).height() / 3;
 			var id = $(this).attr('id');
 			if ($(window).scrollTop() >= pos) {
 				$(".pagi li a").removeClass("is-active");
@@ -37,29 +37,28 @@ head.ready(function() {
 		else {
 			$('.pagi').removeClass('is-dark');
 		};
-
-		console.log ('bla');
 	};
 
 	$(".move-down, .move-up").click(function() {
 		var target = $(this).attr("href");
 
 		$("html, body").animate({
-			scrollTop: $(target).offset().top
-		}, 700);
+			scrollTop: $(target).offset().top + 1
+		}, 1000);
 		return false;
 	});
 
+	$('.cycle-pager-active .reviews__pagi-item').addClass('is-active');
 
 	$(document).scroll(function () {
-		var scroll_top = $(document).scrollTop();
-		var doc_bottom = $('#page6').offset().top;
+		var topScroll = $(document).scrollTop();
+		var lastPageTop = $('#page6').offset().top;
 
 		paginator();
 		paginatorColor();
 
 		// hide and show header on scroll
-		if ( scroll_top > 20 && scroll_top <= doc_bottom - 1 ) {
+		if ( topScroll > 20 && topScroll <= lastPageTop - 1 ) {
 			$('.header').fadeOut();
 		}
 		else {
@@ -67,7 +66,7 @@ head.ready(function() {
 		};
 
 		// hide and show footer__top on scroll
-		if ( scroll_top >= $('#page2').offset().top && scroll_top <= $('#page5').offset().top ) {
+		if ( topScroll >= $('#page2').offset().top && topScroll <= $('#page5').offset().top ) {
 			$('.footer__top').slideDown();
 		}
 		else {
@@ -75,7 +74,7 @@ head.ready(function() {
 		};
 
 		// hide and show footer on scroll
-		if ( scroll_top >= 0 && scroll_top <= $('#page4').offset().top || scroll_top < 0 ) {
+		if ( topScroll >= 0 && topScroll <= $('#page4').offset().top || topScroll < 0 ) {
 			$('.footer__bottom').slideDown();
 		}
 		else {
@@ -83,16 +82,36 @@ head.ready(function() {
 		};
 
 		// replace header social on header tel
-		if ( scroll_top >= doc_bottom - 1000 ) {
+		// if ( topScroll >= lastPageTop ) {
+		// 	$('.header .social').show();
+		// 	$('.header__tel').hide();
+		// }
+		// else {
+		// 	// setTimeout( function() {
+		// 		$('.header .social').fadeOut();
+		// 	// }, 500);
+		// 		$('.header__tel').fadeIn();
+		// };
+
+		if ( topScroll >= lastPageTop ) {
 			$('.header .social').show();
 			$('.header__tel').hide();
-		}
-		else {
-			setTimeout( function() {
+		};
+		if ( topScroll <= $('#page4').offset().top ) {
+			// setTimeout( function() {
 				$('.header .social').hide();
-			}, 500);
+			// }, 500);
 				$('.header__tel').show();
 		};
+
 	});
 
 });
+
+
+
+
+
+
+
+

@@ -16,6 +16,7 @@
 
 .header
 	position: fixed
+	z-index: 200
 	top: 0
 	z-index: 2
 	margin: auto
@@ -39,6 +40,7 @@
 .nav
 	li
 		display: inline-block
+		vertical-align: middle
 		margin-right: 16px
 		&:last-child
 			margin-right: 0
@@ -124,7 +126,10 @@
 		width: 6px
 		height: 6px
 		border-radius: 50%
-		+transition(background .2s linear)
+		+transition(background .1s linear)
+		&:hover
+			width: 9px
+			height: 9px
 		&.is-active
 			width: 100%
 			height: 100%
@@ -140,6 +145,7 @@
 
 .footer
 	position: fixed
+	z-index: 200
 	bottom: 0
 	left: 0
 	right: 0
@@ -212,6 +218,8 @@
 		vertical-align: middle
 		position: relative
 		top: -2px
+		&:hover
+			opacity: .8
 	.icon_fb
 		+s(fb)
 	.icon_vk
@@ -222,40 +230,72 @@
 		+s(vimeo)
 	.header &
 		float: none
+		margin: 0
+		margin-left: -16px
 		.icon:not(:last-child)
 			margin-right: 3px
 
+.gallery-wrap
+	position: relative
 .gallery
 	position: relative
+	width: 725px
+	height: 483px
+	margin: auto
 	.gallery__slide
 		position: relative
-		width: 726px
-		height: 484px
+		width: 100%
+		height: 100%
 		margin: auto
 		box-shadow: 0 0 35px 0 rgba(6,6,6,.15)
 		img
 			display: block
 			max-width: 100%
-	.gallery__prev,
-	.gallery__next
-		position: absolute
-		top: 215px
-		display: block
-	.gallery__prev,
-		+s(prev)
-		left: 13px
-	.gallery__next
-		+s(next)
-		right: 13px
-	.gallery__like
-		position: absolute
-		bottom: 14px
-		right: 14px
-	.gallery__like-vk,
-	.gallery__like-fb
-		margin-top: 10px
-		float: right
-		clear: right
+	.gallery__slide-cap
+		+fs(12)
+		+osl
+		line-height: 50px
+		height: 50px
+		p
+			display: inline-block
+			vertical-align: middle
+			width: 100%
+			line-height: 1.2
+		strong
+			+fs(14)
+			+osr
+			margin-right: 20px
+	&.gallery_video
+		width: 800px
+		height: auto
+		.gallery__slide
+			box-shadow: none
+			iframe
+				box-shadow: 0 0 35px 0 rgba(6,6,6,.15)
+
+.gallery__like
+	position: absolute
+	bottom: 14px
+	right: 14px
+.gallery__like-vk,
+.gallery__like-fb
+	margin-top: 10px
+	float: right
+	clear: right
+
+.gallery__prev,
+.gallery__next
+	position: absolute
+	top: 215px
+	display: block
+	&:hover
+		opacity: .8
+.gallery__prev,
+	+s(prev)
+	left: 13px
+.gallery__next
+	+s(next)
+	right: 13px
 
 .offers
 	margin-top: 10px
@@ -295,6 +335,8 @@
 	width: 550px
 	margin: auto
 	+osl
+	.reviews__item
+		width: 100%
 	.reviews__pic
 		margin: 0 auto
 		width: 150px
@@ -345,11 +387,16 @@
 			border-radius: 50%
 			overflow: hidden
 			opacity: 0.2
+			cursor: pointer
+			+transition(.1s linear)
 			img
 				display: block
 				max-width: 100%
-			&.is-active
+			&.is-active, &:hover
 				opacity: 1
+	.cycle-pager-active
+		.reviews__pagi-item
+			opacity: 1
 
 .share
 	position: relative
@@ -446,6 +493,33 @@
 	bottom: 0
 	width: 980px
 	margin: auto
+
+.photogallery
+	width: 725px
+	height: 483px
+	margin: auto
+	li
+		width: 100% !important
+		margin: 0 !important
+	.photogallery__wrap
+		width: 100%
+	.photogallery__item
+		width: 100%
+		img
+			box-shadow: 0 0 35px 0 rgba(6,6,6,.15)
+	// .photogallery__prev
+	// 	+s(prev)
+	// .photogallery__next
+	// 	+s(next)
+	.photogallery__nav
+		// li:nth-child(1) a
+		// 	left: -100px
+		// li:nth-child(2) a
+		// 	right: -100px
+		// .cd-img-replace
+		// 	+s(next)
+			// &:hover
+			// background-color: transparent
 
 
 
