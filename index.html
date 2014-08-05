@@ -13,6 +13,8 @@
 <!-- BEGIN header -->
 <header class="header">
 	<div class="l-center">
+		<a href="#" class="header__logo"></a>
+		<a href="#" class="header__logo-small"></a>
 		<!-- BEGIN nav -->
 		<div class="nav">
 			<ul class="nav__left">
@@ -20,20 +22,15 @@
 				<li><a href="#">Фотосъемка</a></li>
 				<li><a href="#">Видеосъемка</a></li>
 			</ul>
-			<a href="#" class="header__logo"></a>
 			<ul class="nav__right">
 				<li><a href="#">Отзывы</a></li>
 				<li><a href="#">Контакты</a></li>
-				<li>
-					<a class="header__tel" href="tel:+78462313991">+7 (846) 231-39-91</a>
-				</li>
-				<li>
-					<div class="social" hidden>
-						<a href="#" class="icon icon_fb"></a>
-						<a href="#" class="icon icon_vk"></a>
-						<a href="#" class="icon icon_instagram"></a>
-						<a href="#" class="icon icon_vimeo"></a>
-					</div>
+				<li class="header__tel"><a href="tel:+78462313991">+7 (846) 231-39-91</a></li>
+				<li class="social">
+					<a href="#" class="icon icon_fb"></a>
+					<a href="#" class="icon icon_vk"></a>
+					<a href="#" class="icon icon_instagram"></a>
+					<a href="#" class="icon icon_vimeo"></a>
 				</li>
 			</ul>
 		</div>
@@ -248,26 +245,83 @@
 <!-- END page -->
 
 <!-- BEGIN page -->
-<div  id="page4" class="page">
+<div id="page4" class="page">
 	<div class="l-center">
 		<h2 class="title">Предлагаем полный комплекс свадебных услуг</h2>
 		<!-- BEGIN offers -->
 		<div class="offers">
 			<h3 class="offers__title">Организация свадьбы</h3>
 			<div class="offers__container">
-				<img src="img/offers1.jpg" alt="">
+				<!-- BEGIN offer -->
+				<div class="offer">
+					<ul class="offer__list">
+						<li>
+							<b class="price">60 000</b>Организация свадьбы
+							<a href="#">подробнее</a>
+						</li>
+					</ul>
+					<a class="btn btn_offer" href="#">Сделать заказ</a>
+				</div>
+				<!-- END offer -->
 			</div>
 		</div>
 		<div class="offers">
 			<h3 class="offers__title">Фотосъемка</h3>
 			<div class="offers__container">
-				<img src="img/offers2.jpg" alt="">
+				<!-- <img src="img/offers2.jpg" alt=""> -->
+				<!-- BEGIN offer -->
+				<!-- <div class="offer">
+					<ul class="offer__list">
+						<li>
+							<b class="price">35 000</b>Фотограф<span>8 часов</span>
+							<a href="#">подробнее</a>
+						</li>
+						<li>
+							<b class="price">40 000</b>Фотограф<span>полный день</span>
+							<a href="#">подробнее</a>
+						</li>
+						<li>
+							<b class="price">60 000</b>Два фотографа<span>полный день</span>
+							<a href="#">подробнее</a>
+						</li>
+					</ul>
+					<a class="btn btn_offer" href="#">Сделать заказ</a>
+				</div> -->
+				<div class="offer">
+					<ul class="offer__list">
+						<li>
+							<b class="price">40 000</b>Фотограф<span>полный день</span>
+						</li>
+						<li>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt dolores aliquam necessitatibus et, libero tempore. Quos adipisci, aut veritatis, voluptatibus, eveniet pariatur vel officia delectus hic iste ratione obcaecati cum.</p>
+
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt dolores aliquam necessitatibus et, libero tempore. Quos adipisci, aut veritatis, voluptatibus, eveniet pariatur vel officia delectus hic iste ratione obcaecati cum.</p>
+						</li>
+					</ul>
+					<a class="btn btn_offer" href="#">Сделать заказ</a>
+				</div>
+				<!-- END offer -->
 			</div>
 		</div>
 		<div class="offers">
 			<h3 class="offers__title">Видеосъемка</h3>
 			<div class="offers__container">
-				<img src="img/offers3.jpg" alt="">
+				<!-- <img src="img/offers3.jpg" alt=""> -->
+				<!-- BEGIN offer -->
+				<div class="offer">
+					<ul class="offer__list">
+						<li>
+							<b class="price">35 000</b>Оператор<br>и ассистент
+							<a href="#">подробнее</a>
+						</li>
+						<li>
+							<b class="price">60 000</b>Два оператора<br>и ассистент
+							<a href="#">подробнее</a>
+						</li>
+					</ul>
+					<a class="btn btn_offer" href="#">Сделать заказ</a>
+				</div>
+				<!-- END offer -->
 			</div>
 		</div>
 		<span class="offers__hint"><i></i>Наведите на изображение, чтобы увидеть цены</span>
@@ -371,47 +425,18 @@
 <!-- END pagi -->
 
 <!-- BEGIN footer -->
-<footer class="footer">
-	<!-- BEGIN footer__top -->
-	<div class="footer__top" hidden>
-		<div class="l-center">
-			<div class="person">
-				<div class="person__pic"><img src="img/person.jpg"></div>
-				<dl>
-					<dt class="person__name">Мария Рыжева</dt>
-					<dd class="person__post">Начальник дискотеки</dd>
-				</dl>
-				<a href="#" class="person__question">Задайте вопрос</a>
-			</div>
-			<a href="#" class="footer__offers">Взгляните на наши предложения</a>
+<footer class="footer" hidden>
+	<div class="l-center">
+		<div class="person">
+			<div class="person__pic"><img src="img/person.jpg"></div>
+			<dl>
+				<dt class="person__name">Мария Рыжева</dt>
+				<dd class="person__post">Начальник дискотеки</dd>
+			</dl>
+			<a href="#" class="person__question">Задайте вопрос</a>
 		</div>
+		<a href="#" class="btn btn_footer">Взгляните на наши предложения</a>
 	</div>
-	<!-- END footer__top -->
-	<!-- BEGIN footer__bottom -->
-	<div class="footer__bottom">
-		<div class="l-center">
-			<a href="#" class="footer__logo"></a>
-			<!-- BEGIN nav -->
-			<div class="nav">
-				<ul>
-					<li><a href="#">Свадебные пакеты</a></li>
-					<li><a href="#">Фотосъемка</a></li>
-					<li><a href="#">Видеосъемка</a></li>
-					<li><a href="#">Отзывы</a></li>
-					<li><a href="#">Контакты</a></li>
-					<li><a class="nav__tel" href="tel:+78462313991">+7 (846) 231-39-91</a></li>
-				</ul>
-			</div>
-			<!-- END nav -->
-			<div class="social">
-				<a href="#" class="icon icon_fb"></a>
-				<a href="#" class="icon icon_vk"></a>
-				<a href="#" class="icon icon_instagram"></a>
-				<a href="#" class="icon icon_vimeo"></a>
-			</div>
-		</div>
-	</div>
-	<!-- END footer__bottom -->
 </footer>
 <!-- END footer -->
 

@@ -1,7 +1,8 @@
 // Normally mainpage styles
+=trans
+	+transition(all .15s linear)
 .page
 	min-height: 100%
-	border-bottom: 1px solid #eaedee
 	position: relative
 	&.page_first
 		background: url('../img/firstpage.jpg') 50% 0 no-repeat
@@ -18,30 +19,83 @@
 	position: fixed
 	z-index: 200
 	top: 0
-	z-index: 2
 	margin: auto
 	padding-top: 16px
 	width: 100%
+	+trans
 	.header__logo
 		display: block
-		vertical-align: middle
 		+s(logo)
-		margin: auto
+		position: absolute
+		top: 0
+		left: 50%
+		margin-left: -70px
+	.header__logo-small
+		display: block
+		+s(logo-small)
+		float: left
+		margin-right: 23px
+		display: none
 	.header__tel
-		padding-left: 14px
-		position: relative
-		&:before
-			content: ""
-			display: block
-			+s(telred)
-			position: absolute
-			top: 4px
-			left: 0
+		&.is-hidden
+			width: 0
+			margin: 0
+			overflow: hidden
+		a
+			padding-left: 14px
+			position: relative
+			&:before
+				content: ""
+				display: block
+				+s(telred)
+				position: absolute
+				top: 4px
+				left: 0
+	&.is-small
+		background: #FFF
+		border-bottom: 1px solid #eaedee
+		padding: 17px 0
+		line-height: 68px
+		font-size: 0
+		.nav
+			float: left
+			font-size: 0
+			line-height: 1
+			li
+				line-height: 68px
+				margin-right: 20px
+				&:last-child
+					margin-right: 0
+				a
+					display: inline-block
+					vertical-align: middle
+					line-height: 1.4
+					position: relative
+					top: 3px
+		.nav__left,
+		.nav__right
+			float: left
+			position: static
+			margin: 0 20px 0 0
+			text-align: left
+		.nav__left
+
+		.nav__right
+			margin-right: 0
+		.social
+			display: inline-block
+			margin: 0 0 0 5px
+
 .nav
+	position: relative
+	line-height: 140px
+	+trans
 	li
 		display: inline-block
 		vertical-align: middle
 		margin-right: 16px
+		font-size: 0
+		+trans
 		&:last-child
 			margin-right: 0
 	a
@@ -59,6 +113,7 @@
 		top: 0
 		font-size: 0
 		white-space: nowrap
+		// +trans
 	.nav__left
 		right: 50%
 		text-align: right
@@ -66,16 +121,34 @@
 	.nav__right
 		left: 50%
 		margin-left: 100px
-	.header &
+	// .footer &
+	// 	float: left
+	// 	margin: 17px 0
+	// 	li
+	// 		line-height: 68px
+
+.social
+	.icon
+		display: inline-block
+		vertical-align: middle
 		position: relative
-		line-height: 140px
-		li
-			font-size: 0
-	.footer &
-		float: left
-		margin: 17px 0
-		li
-			line-height: 68px
+		top: -2px
+		&:hover
+			opacity: .8
+		&:not(:last-child)
+			margin-right: 3px
+	.icon_fb
+		+s(fb)
+	.icon_vk
+		+s(vk)
+	.icon_instagram
+		+s(instagram)
+	.icon_vimeo
+		+s(vimeo)
+	.header &
+		display: none
+		&.is-visible
+			display: inline-block
 
 .title
 	text-align: center
@@ -84,7 +157,7 @@
 	color: $dark
 	line-height: 1
 	letter-spacing: -0.1rem
-	padding: 50px 0
+	padding: 150px 0 50px
 	&.title_head
 		+fs(62)
 		padding-top: 84px +140px
@@ -103,7 +176,7 @@
 		opacity: 1
 .move-down
 	+s(down)
-	bottom: 215px
+	bottom: 115px
 .move-up
 	+s(up)
 	bottom: 29px
@@ -149,36 +222,32 @@
 	bottom: 0
 	left: 0
 	right: 0
-	background: #FFF
-	border-bottom: 1px solid #eaedee
-	.footer__logo
-		float: left
-		display: block
-		+s(logo-small)
-		margin: 17px 23px 17px 0
-	.footer__top
-		background: #F4F7F8
-		padding: 13px 0
-		border-bottom: 1px solid #f2f2f2
-		text-align: center
-		position: relative
-		+clr
-	.footer__offers
-		display: block
-		text-decoration: none
-		+fs(16)
-		line-height: 36px
-		color: #FFF
-		background: $blue
-		border: 1px solid #00aede
-		box-shadow: inset 0 2px 0 -1px #26c4f1
+	border-bottom: 1px solid #f2f2f2
+	background: #F4F7F8
+	padding: 13px 0
+	text-align: center
+	+clr
+	.btn_footer
 		width: 290px
-		text-align: center
-		+box
 		position: absolute
-		top: 10px
+		top: 22px
 		left: 50%
 		margin-left: -145px
+
+.btn
+	display: block
+	text-decoration: none
+	+fs(16)
+	line-height: 36px
+	color: #FFF
+	background: $blue
+	border: 1px solid #00aede
+	box-shadow: inset 0 2px 0 -1px #26c4f1
+	text-align: center
+	+box
+	&:hover
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,.3)
+
 
 .person
 	+clr
@@ -209,31 +278,6 @@
 		&:hover
 			text-decoration: underline
 
-.social
-	float: right
-	line-height: 68px
-	margin: 17px 0
-	.icon
-		display: inline-block
-		vertical-align: middle
-		position: relative
-		top: -2px
-		&:hover
-			opacity: .8
-	.icon_fb
-		+s(fb)
-	.icon_vk
-		+s(vk)
-	.icon_instagram
-		+s(instagram)
-	.icon_vimeo
-		+s(vimeo)
-	.header &
-		float: none
-		margin: 0
-		margin-left: -16px
-		.icon:not(:last-child)
-			margin-right: 3px
 
 .gallery-wrap
 	position: relative
@@ -314,6 +358,73 @@
 		img
 			display: block
 			max-width: 100%
+
+.offer
+	width: 100%
+	height: 100%
+	padding: 30px 30px 80px
+	position: relative
+	+box
+	color: $dark
+	font-size: 0
+	overflow: hidden
+	&:before
+		content: ""
+		display: inline-block
+		vertical-align: middle
+		width: 0
+		height: 100%
+	.btn_offer
+		position: absolute
+		left: 50%
+		bottom: 40px
+		min-width: 160px
+		margin-left: -80px
+		line-height: 38px
+		+fs(18)
+	.offer__list
+		display: inline-block
+		vertical-align: middle
+		width: 100%
+		+fs(18)
+		li
+			line-height: 0.9
+			padding-bottom: 25px
+			border-bottom: 1px solid #e5e5e5
+			margin-bottom: 25px
+			&:last-child
+				border-bottom: none
+				margin-bottom: 0
+		span
+			display: inline-block
+			width: 100%
+			+fs(13)
+			+osl
+		a
+			display: inline-block
+			width: 100%
+			+fs(12)
+			color: #BBB
+			&:hover
+				color: #00baee
+	p
+		line-height: 1.2
+		+fs(12)
+		margin: 15px 0
+
+	.price
+		float: right
+		padding-right: 12px
+		position: relative
+		&:after
+			content: ""
+			display: block
+			+s(rub)
+			position: absolute
+			top: 4px
+			right: 0
+
+
 
 .offers__hint
 	display: block
