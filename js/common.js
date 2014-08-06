@@ -4,95 +4,83 @@ head.ready(function() {
 	// 	$(".js-popup").hide();
 	// });
 
-	// paginator
-	$(".pagi li a").click(function() {
-		var pageNav = $(this).attr("href");
+	$('#fullpage').fullpage({
+		verticalCentered: false,
+		easing: 'easeInQuart',
+		menu: true,
+		// navigation: true,
+		// css3: true,
+		scrollingSpeed: 700,
+		scrollOverflow: true,
+		// paddingTop: '140px',
+		// fixedElements: '.header',
+		anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'],
+		menu: '.js-nav',
 
-		$("html, body").animate({
-			scrollTop: $(pageNav).offset().top
-		}, 700);
-		return false;
-	});
+		afterLoad: function(anchorLink, index){
+			var paginator = $('.pagi'),
+				header = $('.header'),
+				footer = $('.footer');
 
-	function paginator() {
-		$(".page").each(function(){
-			var pos = $(this).offset().top - $(this).height() / 3;
-			var id = $(this).attr('id');
-			if ($(window).scrollTop() >= pos) {
-				$(".pagi li a").removeClass("is-active");
-				$('[href = #'+id+']').addClass('is-active');
+			if(index == '2' || index == '3' || index == '4' || index == '5') {
+				paginator.addClass('is-dark');
+				header.addClass('is-small');
+				header.find('.header__logo').fadeOut();
+				header.find('.header__logo-small').fadeIn();
+				footer.slideDown();
 			}
-		});
-	};
+			else {
+				paginator.removeClass('is-dark');
+				header.removeClass('is-small');
+				header.find('.header__logo').fadeIn();
+				header.find('.header__logo-small').fadeOut();
+				footer.slideUp();
+			};
 
-	// change color of paginator
-	function paginatorColor() {
-		var top = $('#page2').offset().top - $('.pagi').position().top;
-		var bottom = $('#page5').offset().top + $('.pagi').position().top ;
-		var scroll = $(document).scrollTop();
+			if (index == 6) {
+				header.find('.header__tel').addClass('is-hidden');
+				header.find('.social').addClass('is-visible');
+			}
+			else {
+				header.find('.header__tel').removeClass('is-hidden');
+				header.find('.social').removeClass('is-visible');
+			};
 
-		if ( scroll >= top && scroll <= bottom ) {
-			$('.pagi').addClass('is-dark');
-		}
-		else {
-			$('.pagi').removeClass('is-dark');
-		};
-	};
+		},
 
-	$('.move-down, .move-up').click(function() {
-		var target = $(this).attr("href");
+		// onLeave: function(index, nextIndex, direction){
+		// 	var	activePage = $('.section.active'),
+		// 		prevPage = $('.section.active').prev('.section'),
+		// 		nextPage = $('.section.active').next('.section');
 
-		$("html, body").animate({
-			scrollTop: $(target).offset().top + 1
-		}, 1000);
-		return false;
+		// 	if (index++) {
+		// 		activePage.addClass('is-visible');
+		// 		prevPage.addClass('is-hidden');
+		// 	}
+		// 	else if (index--) {
+		// 		activePage.removeClass('is-hidden');
+		// 		// nextPage.removeClass('is-visible');
+		// 		// prevPage.addClass('is-hidden');
+		// 	};
+
+		// }
 	});
 
-	$('.cycle-pager-active .reviews__pagi-item').addClass('is-active');
+	$('.offer__container').hover(function() {
+		var slider = $(this).find('.offer__backside-wrap');
 
-	$(document).scroll(function () {
-		var topScroll = $(document).scrollTop(),
-			lastPageTop = $('#page6').offset().top,
-			fifthPageTop = $('#page5').offset().top,
-			secondPageTop = $('#page2').offset().top,
-			header = $('.header'),
-			footer = $('.footer'),
-			logoBig = $('.header__logo'),
-			logoSmall = $('.header__logo-small');
+		$(this).find('.offer__more').click(function(event) {
+			slider.css('left', '-100%');
+		});
 
-		paginator();
-		paginatorColor();
-
-		// change header on scroll
-		if (topScroll >= secondPageTop - 100 && topScroll <= lastPageTop - 10) {
-			header.addClass('is-small');
-			logoBig.fadeOut();
-			logoSmall.fadeIn();
-		}
-		else {
-			header.removeClass('is-small');
-			logoBig.fadeIn();
-			logoSmall.fadeOut();
-		};
-
-		if (topScroll >= lastPageTop - 10) {
-			header.find('.header__tel').addClass('is-hidden');
-			header.find('.social').addClass('is-visible');
-		}
-		else {
-			header.find('.header__tel').removeClass('is-hidden');
-			header.find('.social').removeClass('is-visible');
-		}
-
-
-		// hide and show footer on scroll
-		if ( topScroll >= secondPageTop && topScroll <= fifthPageTop + 80) {
-			footer.slideDown();
-		}
-		else {
-			footer.slideUp();
-		};
-
+		$(this).find('.offer__back').click(function(event) {
+			slider.css('left', '0');
+		});
+	}, function() {
+		var slider = $(this).find('.offer__backside-wrap');
+		setTimeout(function() {
+			slider.css('left', '0');
+		}, 400);
 	});
 
 });

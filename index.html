@@ -13,18 +13,18 @@
 <!-- BEGIN header -->
 <header class="header">
 	<div class="l-center">
-		<a href="#" class="header__logo"></a>
-		<a href="#" class="header__logo-small"></a>
+		<a href="#page1" class="header__logo"></a>
+		<a href="#page1" class="header__logo-small"></a>
 		<!-- BEGIN nav -->
-		<div class="nav">
+		<div class="nav js-nav">
 			<ul class="nav__left">
-				<li><a href="#">Свадебные пакеты</a></li>
-				<li><a href="#">Фотосъемка</a></li>
-				<li><a href="#">Видеосъемка</a></li>
+				<li><a href="#page4" data-menuanchor="page4">Свадебные пакеты</a></li>
+				<li><a href="#page2" data-menuanchor="page2">Фотосъемка</a></li>
+				<li><a href="#page3" data-menuanchor="page3">Видеосъемка</a></li>
 			</ul>
 			<ul class="nav__right">
-				<li><a href="#">Отзывы</a></li>
-				<li><a href="#">Контакты</a></li>
+				<li><a href="#page5" data-menuanchor="page5">Отзывы</a></li>
+				<li><a href="#page6" data-menuanchor="page6">Контакты</a></li>
 				<li class="header__tel"><a href="tel:+78462313991">+7 (846) 231-39-91</a></li>
 				<li class="social">
 					<a href="#" class="icon icon_fb"></a>
@@ -38,389 +38,433 @@
 	</div>
 </header>
 <!-- END header -->
-
-<!-- BEGIN page -->
-<div id="page1" class="page page_first">
-	<div class="l-center">
-		<h1 class="title title_head">Сделаем вашу свадьбу<br>неповторимой!</h1>
+<div id="fullpage">
+	<!-- BEGIN page -->
+	<div id="page1" class="section page page_first">
+		<div class="l-center">
+			<h1 class="title title_head">Сделаем вашу свадьбу<br>неповторимой!</h1>
+		</div>
+			<a href="#page6" class="move-down js-nav"></a>
 	</div>
-		<a href="#page6" class="move-down"></a>
-</div>
-<!-- END page -->
+	<!-- END page -->
 
-<!-- BEGIN page -->
-<div id="page2" class="page">
-	<div class="l-center">
-		<h2 class="title">Невероятные кадры наших фотографов</h2>
-		<!-- <div class="gallery"> -->
-			<ul id="cd-gallery-items" class="cd-container photogallery">
-				<li>
-					<ul class="cd-item-wrapper photogallery__wrap">
-						<li class="cd-item-front photogallery__item">
-							<a href="#0"><img src="img/slide1.jpg" alt=""></a>
-							<div class="gallery__like">
-								<div class="gallery__like-fb"><img src="img/likefb.png"></div>
-								<div class="gallery__like-vk"><img src="img/likevk.png"></div>
-							</div>
-						</li>
-						<li class="cd-item-middle photogallery__item">
-							<a href="#0"><img src="img/slide1.jpg" alt=""></a>
-							<div class="gallery__like">
-								<div class="gallery__like-fb"><img src="img/likefb.png"></div>
-								<div class="gallery__like-vk"><img src="img/likevk.png"></div>
-							</div>
-						</li>
-						<li class="cd-item-back photogallery__item">
-							<a href="#0"><img src="img/slide1.jpg" alt=""></a>
-							<div class="gallery__like">
-								<div class="gallery__like-fb"><img src="img/likefb.png"></div>
-								<div class="gallery__like-vk"><img src="img/likevk.png"></div>
-							</div>
-						</li>
-						<li class="cd-item-out photogallery__item">
-							<a href="#0"><img src="img/slide1.jpg" alt=""></a>
-							<div class="gallery__like">
-								<div class="gallery__like-fb"><img src="img/likefb.png"></div>
-								<div class="gallery__like-vk"><img src="img/likevk.png"></div>
-							</div>
-						</li>
-						<li class="cd-item-out photogallery__item">
-							<a href="#0"><img src="img/slide1.jpg" alt=""></a>
-							<div class="gallery__like">
-								<div class="gallery__like-fb"><img src="img/likefb.png"></div>
-								<div class="gallery__like-vk"><img src="img/likevk.png"></div>
-							</div>
-						</li>
-						<li class="cd-item-out photogallery__item">
-							<a href="#0"><img src="img/slide1.jpg" alt=""></a>
-							<div class="gallery__like">
-								<div class="gallery__like-fb"><img src="img/likefb.png"></div>
-								<div class="gallery__like-vk"><img src="img/likevk.png"></div>
-							</div>
-						</li>
-						<li class="cd-item-out photogallery__item">
-							<a href="#0"><img src="img/slide1.jpg" alt=""></a>
-							<div class="gallery__like">
-								<div class="gallery__like-fb"><img src="img/likefb.png"></div>
-								<div class="gallery__like-vk"><img src="img/likevk.png"></div>
-							</div>
-						</li>
-					</ul>
-
-					<nav>
-						<ul class="cd-item-navigation photogallery__nav">
-							<li><a class="cd-img-replace photogallery__prev" href="#0">Prev</a></li>
-							<li><a class="cd-img-replace photogallery__next" href="#0">Next</a></li>
+	<!-- BEGIN page -->
+	<div class="section page ">
+		<div class="l-center">
+			<h2 class="title">Невероятные кадры наших фотографов</h2>
+			<!-- <div class="gallery"> -->
+				<ul id="cd-gallery-items" class="cd-container photogallery">
+					<li>
+						<ul class="cd-item-wrapper photogallery__wrap">
+							<li class="cd-item-front photogallery__item">
+								<img src="img/slide1.jpg" alt="">
+								<div class="gallery__like">
+									<div class="gallery__like-fb"><img src="img/likefb.png"></div>
+									<div class="gallery__like-vk"><img src="img/likevk.png"></div>
+								</div>
+							</li>
+							<li class="cd-item-middle photogallery__item">
+								<img src="img/slide1.jpg" alt="">
+								<div class="gallery__like">
+									<div class="gallery__like-fb"><img src="img/likefb.png"></div>
+									<div class="gallery__like-vk"><img src="img/likevk.png"></div>
+								</div>
+							</li>
+							<li class="cd-item-back photogallery__item">
+								<img src="img/slide1.jpg" alt="">
+								<div class="gallery__like">
+									<div class="gallery__like-fb"><img src="img/likefb.png"></div>
+									<div class="gallery__like-vk"><img src="img/likevk.png"></div>
+								</div>
+							</li>
+							<li class="cd-item-out photogallery__item">
+								<img src="img/slide1.jpg" alt="">
+								<div class="gallery__like">
+									<div class="gallery__like-fb"><img src="img/likefb.png"></div>
+									<div class="gallery__like-vk"><img src="img/likevk.png"></div>
+								</div>
+							</li>
+							<li class="cd-item-out photogallery__item">
+								<img src="img/slide1.jpg" alt="">
+								<div class="gallery__like">
+									<div class="gallery__like-fb"><img src="img/likefb.png"></div>
+									<div class="gallery__like-vk"><img src="img/likevk.png"></div>
+								</div>
+							</li>
+							<li class="cd-item-out photogallery__item">
+								<img src="img/slide1.jpg" alt="">
+								<div class="gallery__like">
+									<div class="gallery__like-fb"><img src="img/likefb.png"></div>
+									<div class="gallery__like-vk"><img src="img/likevk.png"></div>
+								</div>
+							</li>
+							<li class="cd-item-out photogallery__item">
+								<img src="img/slide1.jpg" alt="">
+								<div class="gallery__like">
+									<div class="gallery__like-fb"><img src="img/likefb.png"></div>
+									<div class="gallery__like-vk"><img src="img/likevk.png"></div>
+								</div>
+							</li>
 						</ul>
-					</nav>
 
-				</li>
-			</ul>
-		<!-- </div> -->
+						<nav>
+							<ul class="cd-item-navigation photogallery__nav">
+								<li><a class="cd-img-replace photogallery__prev" href="#0">Prev</a></li>
+								<li><a class="cd-img-replace photogallery__next" href="#0">Next</a></li>
+							</ul>
+						</nav>
 
-		<!-- BEGIN gallery -->
-	<!-- 	<div class="gallery-wrap">
-			<div class="gallery cycle-slideshow"
-									data-cycle-fx="scrollHorz"
-									data-cycle-timeout="5000"
-									data-cycle-slides="> .photoslide"
-									data-cycle-prev=".photoprev"
-									data-cycle-next=".photonext">
-				<div class="gallery__slide photoslide">
-					<img src="img/slide1.jpg" alt="">
-					<div class="gallery__like">
-						<div class="gallery__like-fb"><img src="img/likefb.png"></div>
-						<div class="gallery__like-vk"><img src="img/likevk.png"></div>
-					</div>
-				</div>
-				<div class="gallery__slide photoslide">
-					<img src="img/slide1.jpg" alt="">
-					<div class="gallery__like">
-						<div class="gallery__like-fb"><img src="img/likefb.png"></div>
-						<div class="gallery__like-vk"><img src="img/likevk.png"></div>
-					</div>
-				</div>
-				<div class="gallery__slide photoslide">
-					<img src="img/slide1.jpg" alt="">
-					<div class="gallery__like">
-						<div class="gallery__like-fb"><img src="img/likefb.png"></div>
-						<div class="gallery__like-vk"><img src="img/likevk.png"></div>
-					</div>
-				</div>
-				<div class="gallery__slide photoslide">
-					<img src="img/slide1.jpg" alt="">
-					<div class="gallery__like">
-						<div class="gallery__like-fb"><img src="img/likefb.png"></div>
-						<div class="gallery__like-vk"><img src="img/likevk.png"></div>
-					</div>
-				</div>
-			</div>
-			<a href="#" class="gallery__prev photoprev"></a>
-			<a href="#" class="gallery__next photonext"></a>
-		</div> -->
-		<!-- END gallery -->
-	</div>
-</div>
-<!-- END page -->
+					</li>
+				</ul>
+			<!-- </div> -->
 
-<!-- BEGIN page -->
-<div id="page3" class="page">
-	<div class="l-center">
-		<h2 class="title">Роскошный видеоряд</h2>
-		<!-- BEGIN gallery -->
-		<div class="gallery-wrap">
-			<div class="gallery gallery_video cycle-slideshow"
+			<!-- BEGIN gallery -->
+		<!-- 	<div class="gallery-wrap">
+				<div class="gallery cycle-slideshow"
 										data-cycle-fx="scrollHorz"
-										data-cycle-timeout="0"
-										data-cycle-slides="> .gallery__slide"
-										data-cycle-prev=".gallery__prev"
-										data-cycle-next=".gallery__next">
-				<div class="gallery__slide">
-					<iframe src="//player.vimeo.com/video/77994007" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-					<div class="gallery__slide-cap">
-						<p><strong>Sunday Up Market 2014</strong>Режисер: Алексей Васильев, Оператор: Богдан Ку, Звукорежиссер: Ольга Цвет</p>
+										data-cycle-timeout="5000"
+										data-cycle-slides="> .photoslide"
+										data-cycle-prev=".photoprev"
+										data-cycle-next=".photonext">
+					<div class="gallery__slide photoslide">
+						<img src="img/slide1.jpg" alt="">
+						<div class="gallery__like">
+							<div class="gallery__like-fb"><img src="img/likefb.png"></div>
+							<div class="gallery__like-vk"><img src="img/likevk.png"></div>
+						</div>
+					</div>
+					<div class="gallery__slide photoslide">
+						<img src="img/slide1.jpg" alt="">
+						<div class="gallery__like">
+							<div class="gallery__like-fb"><img src="img/likefb.png"></div>
+							<div class="gallery__like-vk"><img src="img/likevk.png"></div>
+						</div>
+					</div>
+					<div class="gallery__slide photoslide">
+						<img src="img/slide1.jpg" alt="">
+						<div class="gallery__like">
+							<div class="gallery__like-fb"><img src="img/likefb.png"></div>
+							<div class="gallery__like-vk"><img src="img/likevk.png"></div>
+						</div>
+					</div>
+					<div class="gallery__slide photoslide">
+						<img src="img/slide1.jpg" alt="">
+						<div class="gallery__like">
+							<div class="gallery__like-fb"><img src="img/likefb.png"></div>
+							<div class="gallery__like-vk"><img src="img/likevk.png"></div>
+						</div>
 					</div>
 				</div>
-				<div class="gallery__slide">
-					<iframe src="//player.vimeo.com/video/86152347" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-					<div class="gallery__slide-cap">
-						<p><strong>Sunday Up Market 2014</strong>Режисер: АБогдан Ку, Звукорежиссер: Ольга Цвет</p>
+				<a href="#" class="gallery__prev photoprev"></a>
+				<a href="#" class="gallery__next photonext"></a>
+			</div> -->
+			<!-- END gallery -->
+		</div>
+	</div>
+	<!-- END page -->
+
+	<!-- BEGIN page -->
+	<div class="section page ">
+		<div class="l-center">
+			<h2 class="title">Роскошный видеоряд</h2>
+			<!-- BEGIN gallery -->
+			<div class="gallery-wrap">
+				<div class="gallery gallery_video cycle-slideshow"
+											data-cycle-fx="scrollHorz"
+											data-cycle-timeout="0"
+											data-cycle-slides="> .gallery__slide"
+											data-cycle-prev=".gallery__prev"
+											data-cycle-next=".gallery__next">
+					<div class="gallery__slide">
+						<iframe src="//player.vimeo.com/video/77994007" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						<div class="gallery__slide-cap">
+							<p><strong>Sunday Up Market 2014</strong>Режисер: Алексей Васильев, Оператор: Богдан Ку, Звукорежиссер: Ольга Цвет</p>
+						</div>
+					</div>
+					<div class="gallery__slide">
+						<iframe src="//player.vimeo.com/video/86152347" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						<div class="gallery__slide-cap">
+							<p><strong>Sunday Up Market 2014</strong>Режисер: АБогдан Ку, Звукорежиссер: Ольга Цвет</p>
+						</div>
+					</div>
+					<!-- <div class="gallery__slide">
+						<iframe src="//player.vimeo.com/video/84787944" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					</div>
+					<div class="gallery__slide">
+						<iframe src="//player.vimeo.com/video/84787892" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					</div>
+					<div class="gallery__slide">
+						<iframe src="//player.vimeo.com/video/84787894" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					</div>
+					<div class="gallery__slide">
+						<iframe src="//player.vimeo.com/video/81820131" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					</div>
+					<div class="gallery__slide">
+						<iframe src="//player.vimeo.com/video/78896906" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					</div>
+					<div class="gallery__slide">
+						<iframe src="//player.vimeo.com/video/78300089" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					</div>
+					<div class="gallery__slide">
+						<iframe src="//player.vimeo.com/video/77666374" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					</div>
+					<div class="gallery__slide">
+						<iframe src="//player.vimeo.com/video/75241409" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					</div>
+					<div class="gallery__slide">
+						<iframe src="//player.vimeo.com/video/74366135" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					</div>
+					<div class="gallery__slide">
+						<iframe src="//player.vimeo.com/video/67387022" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					</div>
+					<div class="gallery__slide">
+						<iframe src="//player.vimeo.com/video/67105995" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					</div>
+					<div class="gallery__slide">
+						<iframe src="//player.vimeo.com/video/55086687" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					</div>
+					<div class="gallery__slide">
+						<iframe src="//player.vimeo.com/video/55039035" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					</div>
+					<div class="gallery__slide">
+						<iframe src="//player.vimeo.com/video/53423239" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					</div>
+					<div class="gallery__slide">
+						<iframe src="//player.vimeo.com/video/53011755" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					</div>
+					<div class="gallery__slide">
+						<iframe src="//player.vimeo.com/video/50238058" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					</div> -->
+				</div>
+				<a href="#" class="gallery__prev"></a>
+				<a href="#" class="gallery__next"></a>
+			</div>
+			<!-- END gallery -->
+		</div>
+	</div>
+	<!-- END page -->
+
+	<!-- BEGIN page -->
+	<div class="section page ">
+		<div class="l-center">
+			<h2 class="title">Предлагаем полный комплекс свадебных услуг</h2>
+			<!-- BEGIN offer -->
+			<div class="offer">
+				<h3 class="offer__title">Организация свадьбы</h3>
+				<div class="offer__container">
+					<div class="offer__front" style="background:url('img/offers1.jpg')"></div>
+					<div class="offer__backside">
+						<div class="offer__backside-wrap">
+
+							<div class="offer__backside-box">
+								<!-- BEGIN offer content -->
+								<div class="offer__content">
+									<ul class="offer__list">
+										<li>
+											<b class="price">60 000</b>Организация свадьбы
+											<a class="offer__more" href="#">подробнее</a>
+										</li>
+									</ul>
+								</div>
+								<!-- END offer content -->
+								<a class="btn btn_offer" href="#">Сделать заказ</a>
+							</div>
+
+							<div class="offer__backside-box">
+
+							</div>
+
+						</div>
 					</div>
 				</div>
-				<!-- <div class="gallery__slide">
-					<iframe src="//player.vimeo.com/video/84787944" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-				</div>
-				<div class="gallery__slide">
-					<iframe src="//player.vimeo.com/video/84787892" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-				</div>
-				<div class="gallery__slide">
-					<iframe src="//player.vimeo.com/video/84787894" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-				</div>
-				<div class="gallery__slide">
-					<iframe src="//player.vimeo.com/video/81820131" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-				</div>
-				<div class="gallery__slide">
-					<iframe src="//player.vimeo.com/video/78896906" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-				</div>
-				<div class="gallery__slide">
-					<iframe src="//player.vimeo.com/video/78300089" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-				</div>
-				<div class="gallery__slide">
-					<iframe src="//player.vimeo.com/video/77666374" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-				</div>
-				<div class="gallery__slide">
-					<iframe src="//player.vimeo.com/video/75241409" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-				</div>
-				<div class="gallery__slide">
-					<iframe src="//player.vimeo.com/video/74366135" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-				</div>
-				<div class="gallery__slide">
-					<iframe src="//player.vimeo.com/video/67387022" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-				</div>
-				<div class="gallery__slide">
-					<iframe src="//player.vimeo.com/video/67105995" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-				</div>
-				<div class="gallery__slide">
-					<iframe src="//player.vimeo.com/video/55086687" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-				</div>
-				<div class="gallery__slide">
-					<iframe src="//player.vimeo.com/video/55039035" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-				</div>
-				<div class="gallery__slide">
-					<iframe src="//player.vimeo.com/video/53423239" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-				</div>
-				<div class="gallery__slide">
-					<iframe src="//player.vimeo.com/video/53011755" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-				</div>
-				<div class="gallery__slide">
-					<iframe src="//player.vimeo.com/video/50238058" width="100%" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-				</div> -->
 			</div>
-			<a href="#" class="gallery__prev"></a>
-			<a href="#" class="gallery__next"></a>
-		</div>
-		<!-- END gallery -->
-	</div>
-</div>
-<!-- END page -->
+			<!-- END offer -->
+			<!-- BEGIN offer -->
+			<div class="offer">
+				<h3 class="offer__title">Фотосъемка</h3>
+				<div class="offer__container">
+					<div class="offer__front" style="background:url('img/offers2.jpg')"></div>
+					<div class="offer__backside">
+						<div class="offer__backside-wrap">
 
-<!-- BEGIN page -->
-<div id="page4" class="page">
-	<div class="l-center">
-		<h2 class="title">Предлагаем полный комплекс свадебных услуг</h2>
-		<!-- BEGIN offers -->
-		<div class="offers">
-			<h3 class="offers__title">Организация свадьбы</h3>
-			<div class="offers__container">
-				<!-- BEGIN offer -->
-				<div class="offer">
-					<ul class="offer__list">
-						<li>
-							<b class="price">60 000</b>Организация свадьбы
-							<a href="#">подробнее</a>
-						</li>
-					</ul>
-					<a class="btn btn_offer" href="#">Сделать заказ</a>
-				</div>
-				<!-- END offer -->
-			</div>
-		</div>
-		<div class="offers">
-			<h3 class="offers__title">Фотосъемка</h3>
-			<div class="offers__container">
-				<!-- <img src="img/offers2.jpg" alt=""> -->
-				<!-- BEGIN offer -->
-				<!-- <div class="offer">
-					<ul class="offer__list">
-						<li>
-							<b class="price">35 000</b>Фотограф<span>8 часов</span>
-							<a href="#">подробнее</a>
-						</li>
-						<li>
-							<b class="price">40 000</b>Фотограф<span>полный день</span>
-							<a href="#">подробнее</a>
-						</li>
-						<li>
-							<b class="price">60 000</b>Два фотографа<span>полный день</span>
-							<a href="#">подробнее</a>
-						</li>
-					</ul>
-					<a class="btn btn_offer" href="#">Сделать заказ</a>
-				</div> -->
-				<div class="offer">
-					<ul class="offer__list">
-						<li>
-							<b class="price">40 000</b>Фотограф<span>полный день</span>
-						</li>
-						<li>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt dolores aliquam necessitatibus et, libero tempore. Quos adipisci, aut veritatis, voluptatibus, eveniet pariatur vel officia delectus hic iste ratione obcaecati cum.</p>
+							<div class="offer__backside-box">
+								<!-- BEGIN offer content -->
+								<div class="offer__content">
+									<ul class="offer__list">
+										<li>
+											<b class="price">35 000</b>Фотограф<span>8 часов</span>
+											<a class="offer__more" href="#">подробнее</a>
+										</li>
+										<li>
+											<b class="price">40 000</b>Фотограф<span>полный день</span>
+											<a class="offer__more" href="#">подробнее</a>
+										</li>
+										<li>
+											<b class="price">60 000</b>Два фотографа<span>полный день</span>
+											<a class="offer__more" href="#">подробнее</a>
+										</li>
+									</ul>
+								</div>
+								<!-- END offer content -->
+								<a class="btn btn_offer" href="#">Сделать заказ</a>
+							</div>
 
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt dolores aliquam necessitatibus et, libero tempore. Quos adipisci, aut veritatis, voluptatibus, eveniet pariatur vel officia delectus hic iste ratione obcaecati cum.</p>
-						</li>
-					</ul>
-					<a class="btn btn_offer" href="#">Сделать заказ</a>
-				</div>
-				<!-- END offer -->
-			</div>
-		</div>
-		<div class="offers">
-			<h3 class="offers__title">Видеосъемка</h3>
-			<div class="offers__container">
-				<!-- <img src="img/offers3.jpg" alt=""> -->
-				<!-- BEGIN offer -->
-				<div class="offer">
-					<ul class="offer__list">
-						<li>
-							<b class="price">35 000</b>Оператор<br>и ассистент
-							<a href="#">подробнее</a>
-						</li>
-						<li>
-							<b class="price">60 000</b>Два оператора<br>и ассистент
-							<a href="#">подробнее</a>
-						</li>
-					</ul>
-					<a class="btn btn_offer" href="#">Сделать заказ</a>
-				</div>
-				<!-- END offer -->
-			</div>
-		</div>
-		<span class="offers__hint"><i></i>Наведите на изображение, чтобы увидеть цены</span>
-		<!-- END offers -->
-	</div>
-</div>
-<!-- END page -->
+							<div class="offer__backside-box">
+								<!-- BEGIN offer content -->
+								<div class="offer__content">
+									<ul class="offer__list">
+										<li>
+											<b class="price">40 000</b>Фотограф<span>полный день</span>
+										</li>
+										<li>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt dolores aliquam necessitatibus et, libero tempore. Quos adipisci, aut veritatis, voluptatibus, eveniet pariatur vel officia delectus hic iste ratione obcaecati cum.</p>
 
-<!-- BEGIN page -->
-<div  id="page5" class="page">
-	<div class="l-center">
-		<h2 class="title">Наши клиенты самые счастливые</h2>
-		<!-- BEGIN reviews -->
-		<div class="reviews cycle-slideshow"
-										data-cycle-fx="fade"
-										data-cycle-timeout="4000"
-										data-cycle-slides="> .reviews__item"
-										data-cycle-pager-event="mouseover"
-										data-cycle-pager="#no-template-pager"
-										data-cycle-pager-template="">
-			<div class="reviews__item">
-				<div class="reviews__pic"><img src="img/reviews.jpg"></div>
-				<span class="reviews__name">Виктор и Валентина</span>
-				<p class="reviews__text">Хотим выразить благодарность Александру! Ты необыкновенно талантливый мастер своего дела!</p>
-			</div>
-			<div class="reviews__item">
-				<div class="reviews__pic"><img src="img/reviews.jpg"></div>
-				<span class="reviews__name">Саша и Маша</span>
-				<p class="reviews__text">Хотим выразить благодарность Александру! Ты необыкновенно талантливый фотограф и настоящий мастер своего дела настоящий мастер своего дела!</p>
-			</div>
-			<div class="reviews__item">
-				<div class="reviews__pic"><img src="img/reviews.jpg"></div>
-				<span class="reviews__name">Петя и Вася</span>
-				<p class="reviews__text">Хотим выразить благодарность Александру! Ты необыкновенно талантливый фотограф и настоящий мастер своего дела!</p>
-			</div>
-			<div class="reviews__item">
-				<div class="reviews__pic"><img src="img/reviews.jpg"></div>
-				<span class="reviews__name">Владимир и Наталья</span>
-				<p class="reviews__text">Хотим астер своего дела!</p>
-			</div>
-			<div class="reviews__item">
-				<div class="reviews__pic"><img src="img/reviews.jpg"></div>
-				<span class="reviews__name">Евгений и Евгения</span>
-				<p class="reviews__text">Хотим выразить Ты необыкновенно талантливый фотограф и настоящий мастер своего дела!</p>
-			</div>
-			<ul id="no-template-pager" class="reviews__pagi cycle-pager external">
-				<li><div class="reviews__pagi-item"><img src="img/reviews.jpg"></div></li>
-				<li><div class="reviews__pagi-item"><img src="img/reviews.jpg"></div></li>
-				<li><div class="reviews__pagi-item"><img src="img/reviews.jpg"></div></li>
-				<li><div class="reviews__pagi-item"><img src="img/reviews.jpg"></div></li>
-				<li><div class="reviews__pagi-item"><img src="img/reviews.jpg"></div></li>
-			</ul>
-		</div>
-		<!-- END reviews -->
-	</div>
-</div>
-<!-- END page -->
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt dolores aliquam necessitatibus et, libero tempore. Quos adipisci, aut veritatis, voluptatibus, eveniet pariatur vel officia delectus hic iste ratione obcaecati cum.</p>
+										</li>
+									</ul>
+								</div>
+								<!-- END offer content -->
+								<a class="btn btn_offer" href="#">Сделать заказ</a>
+								<a class="offer__back" href="#">Назад</a>
+							</div>
 
-<!-- BEGIN page -->
-<div  id="page6" class="page page_last">
-	<div class="l-center">
-		<div class="lastpage-wrap">
-			<!-- BEGIN share -->
-			<div class="share">
-				<span class="share__left">Расскажи друзьям!</span>
-				<a href="#" class="share__center">VK</a>
-				<span class="share__right">1000 лайков</span>
+						</div>
+					</div>
+				</div>
 			</div>
-			<!-- END share -->
-			<!-- BEGIN contacts -->
-			<ul class="contacts">
-				<li class="contacts__tel">
-					<a href="tel:+78462313991">+7 (846) 231-39-91</a><br>
-					<a href="tel:+79170352955">+7 (917) 035-29-55</a>
-				</li>
-				<li class="contacts__location">
-					<a href="#">ул. Молодогвардейская,<br>дом 87В, Самара, Россия</a>
-				</li>
-				<li>
-					<a class="contacts__email" href="mailto:hello@jk-event.ru">hello@jk-event.ru</a><br>
-					<a class="contacts__link" href="#">перейти на основной сайт</a>
-				</li>
-			</ul>
-			<!-- END contacts -->
-			<a href="#page1" class="move-up"></a>
-			<span class="creator">Создание сайта<br><a href="#">DOBRO</a></span>
+			<!-- END offer -->
+			<!-- BEGIN offer -->
+			<div class="offer">
+				<h3 class="offer__title">Видеосъемка</h3>
+				<div class="offer__container">
+					<div class="offer__front" style="background:url('img/offers3.jpg')"></div>
+					<div class="offer__backside">
+						<div class="offer__backside-wrap">
+
+							<div class="offer__backside-box">
+								<!-- BEGIN offer content -->
+								<div class="offer__content">
+									<ul class="offer__list">
+										<li>
+											<b class="price">35 000</b>Оператор<br>и ассистент
+											<a class="offer__more" href="#">подробнее</a>
+										</li>
+										<li>
+											<b class="price">60 000</b>Два оператора<br>и ассистент
+											<a class="offer__more" href="#">подробнее</a>
+										</li>
+									</ul>
+								</div>
+								<!-- END offer content -->
+								<a class="btn btn_offer" href="#">Сделать заказ</a>
+							</div>
+
+							<div class="offer__backside-box">
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<span class="offer__hint"><i></i>Наведите на изображение, чтобы увидеть цены</span>
+			<!-- END offer -->
 		</div>
 	</div>
+	<!-- END page -->
+
+	<!-- BEGIN page -->
+	<div class="section page ">
+		<div class="l-center">
+			<h2 class="title">Наши клиенты самые счастливые</h2>
+			<!-- BEGIN reviews -->
+			<div class="reviews cycle-slideshow"
+											data-cycle-fx="fade"
+											data-cycle-timeout="4000"
+											data-cycle-slides="> .reviews__item"
+											data-cycle-pager-event="mouseover"
+											data-cycle-pager="#no-template-pager"
+											data-cycle-pager-template="">
+				<div class="reviews__item">
+					<div class="reviews__pic"><img src="img/reviews.jpg"></div>
+					<span class="reviews__name">Виктор и Валентина</span>
+					<p class="reviews__text">Хотим выразить благодарность Александру! Ты необыкновенно талантливый мастер своего дела!</p>
+				</div>
+				<div class="reviews__item">
+					<div class="reviews__pic"><img src="img/reviews.jpg"></div>
+					<span class="reviews__name">Саша и Маша</span>
+					<p class="reviews__text">Хотим выразить благодарность Александру! Ты необыкновенно талантливый фотограф и настоящий мастер своего дела настоящий мастер своего дела!</p>
+				</div>
+				<div class="reviews__item">
+					<div class="reviews__pic"><img src="img/reviews.jpg"></div>
+					<span class="reviews__name">Петя и Вася</span>
+					<p class="reviews__text">Хотим выразить благодарность Александру! Ты необыкновенно талантливый фотограф и настоящий мастер своего дела!</p>
+				</div>
+				<div class="reviews__item">
+					<div class="reviews__pic"><img src="img/reviews.jpg"></div>
+					<span class="reviews__name">Владимир и Наталья</span>
+					<p class="reviews__text">Хотим астер своего дела!</p>
+				</div>
+				<div class="reviews__item">
+					<div class="reviews__pic"><img src="img/reviews.jpg"></div>
+					<span class="reviews__name">Евгений и Евгения</span>
+					<p class="reviews__text">Хотим выразить Ты необыкновенно талантливый фотограф и настоящий мастер своего дела!</p>
+				</div>
+				<ul id="no-template-pager" class="reviews__pagi cycle-pager external">
+					<li><div class="reviews__pagi-item"><img src="img/reviews.jpg"></div></li>
+					<li><div class="reviews__pagi-item"><img src="img/reviews.jpg"></div></li>
+					<li><div class="reviews__pagi-item"><img src="img/reviews.jpg"></div></li>
+					<li><div class="reviews__pagi-item"><img src="img/reviews.jpg"></div></li>
+					<li><div class="reviews__pagi-item"><img src="img/reviews.jpg"></div></li>
+				</ul>
+			</div>
+			<!-- END reviews -->
+		</div>
+	</div>
+	<!-- END page -->
+
+	<!-- BEGIN page -->
+	<div class="section page page_last">
+		<div class="l-center">
+			<div class="lastpage-wrap">
+				<!-- BEGIN share -->
+				<div class="share">
+					<span class="share__left">Расскажи друзьям!</span>
+					<div class="share__center"><a href="#">VK<i class="heart"></i></a></div>
+					<span class="share__right">1000 лайков</span>
+				</div>
+				<!-- END share -->
+				<!-- BEGIN contacts -->
+				<ul class="contacts">
+					<li class="contacts__tel">
+						<a href="tel:+78462313991">+7 (846) 231-39-91</a><br>
+						<a href="tel:+79170352955">+7 (917) 035-29-55</a>
+					</li>
+					<li class="contacts__location">
+						<a href="#">ул. Молодогвардейская,<br>дом 87В, Самара, Россия</a>
+					</li>
+					<li>
+						<a class="contacts__email" href="mailto:hello@jk-event.ru">hello@jk-event.ru</a><br>
+						<a class="contacts__link" href="#">перейти на основной сайт</a>
+					</li>
+				</ul>
+				<!-- END contacts -->
+				<a href="#page1" class="move-up"></a>
+				<span class="creator">Создание сайта<br><a href="#">DOBRO</a></span>
+			</div>
+		</div>
+	</div>
+	<!-- END page -->
 </div>
-<!-- END page -->
 
 <!-- BEGIN pagi -->
-<ul class="pagi">
-	<li><a href="#page1" class="is-active"></a></li>
-	<li><a href="#page2"></a></li>
-	<li><a href="#page3"></a></li>
-	<li><a href="#page4"></a></li>
-	<li><a href="#page5"></a></li>
-	<li><a href="#page6"></a></li>
+<ul class="pagi js-nav">
+	<li><a href="#page1" data-menuanchor="page1"></a></li>
+	<li><a href="#page2" data-menuanchor="page2"></a></li>
+	<li><a href="#page3" data-menuanchor="page3"></a></li>
+	<li><a href="#page4" data-menuanchor="page4"></a></li>
+	<li><a href="#page5" data-menuanchor="page5"></a></li>
+	<li><a href="#page6" data-menuanchor="page6"></a></li>
 </ul>
 <!-- END pagi -->
 
@@ -439,6 +483,22 @@
 	</div>
 </footer>
 <!-- END footer -->
+
+<!-- BEGIN popup -->
+<div class="popup">
+	<div class="popup__form">
+		<form>
+			<label for="name">Имя</label>
+			<input type="text" id="name">
+			<label for="phone">Телефон</label>
+			<input type="text" id="phone">
+			<label for="email">Почта</label>
+			<input type="text" id="email">
+
+		</form>
+	</div>
+</div>
+<!-- END popup -->
 
 <script src="js/lib/head.js" data-headjs-load="js/init.js"></script>
 </body>

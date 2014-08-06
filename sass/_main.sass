@@ -4,6 +4,13 @@
 .page
 	min-height: 100%
 	position: relative
+	// position: absolute
+	// top: 0
+	// left: 0
+	// height: 100%
+	// width: 100%
+	// opacity: 1
+	// +transform(translateY(100%))
 	&.page_first
 		background: url('../img/firstpage.jpg') 50% 0 no-repeat
 		background-size: cover
@@ -11,6 +18,11 @@
 	&.page_last
 		background: url('../img/lastpage.jpg') 50% 0 no-repeat
 		background-size: cover
+	&.is-visible
+		+transform(translateY(0))
+	&.is-hidden
+		+transition(all 1s linear)
+		opacity: 0
 
 .is-hidden
 	display: none
@@ -104,7 +116,7 @@
 		color: $vinous
 		+fs(14)
 		vertical-align: baseline
-		&:hover
+		&:hover, &.active
 			color: $red
 	.nav__left,
 	.nav__right
@@ -203,7 +215,7 @@
 		&:hover
 			width: 9px
 			height: 9px
-		&.is-active
+		&.is-active, &.active
 			width: 100%
 			height: 100%
 			background: transparent
@@ -212,7 +224,7 @@
 	&.is-dark
 		a
 			background: $vinous
-			&.is-active
+			&.is-active, &.active
 				background: transparent
 				border-color: $vinous
 
@@ -247,6 +259,15 @@
 	+box
 	&:hover
 		box-shadow: 0 2px 5px 0 rgba(0,0,0,.3)
+	&.btn_offer
+		position: absolute
+		z-index: 2
+		left: 50%
+		bottom: 40px
+		min-width: 160px
+		margin-left: -80px
+		line-height: 38px
+		+fs(18)
 
 
 .person
@@ -341,47 +362,90 @@
 	+s(next)
 	right: 13px
 
-.offers
+.offer
 	margin-top: 10px
 	float: left
 	margin: 10px 13px 30px
-	.offers__title
+	perspective: 1100px
+
+	.offer__title
 		+fs(24)
 		font-weight: normal
 		color: #444
 		margin-bottom: 30px
 		text-align: center
-	.offers__container
+
+	.offer__container
 		width: 300px
 		height: 400px
 		box-shadow: 0 0 35px 0 rgba(6,6,6,.15)
-		img
-			display: block
-			max-width: 100%
+		position: relative
+		-webkit-perspective: 1100px
+		-moz-perspective: 1100px
+		+transition(all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55))
+		-webkit-transform-style: preserve-3d
+		-moz-transform-style: preserve-3d
+		transform-style: preserve-3d
+		+gpu
+		&:hover
+			+transform(rotateY(180deg))
 
-.offer
-	width: 100%
+	.offer__front
+		width: 100%
+		height: 100%
+		+transition(all 1s ease)
+		-webkit-background-size: cover
+		-o-background-size: cover
+		background-size: cover
+		background-position: 50% 50%
+		-webkit-backface-visibility: hidden
+		-moz-backface-visibility: hidden
+		backface-visibility: hidden
+
+	.offer__backside
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		font-size: 0
+		overflow: hidden
+		-webkit-backface-visibility: hidden
+		-moz-backface-visibility: hidden
+		backface-visibility: hidden
+		+transform(rotateY(180deg))
+
+.offer__backside-wrap
+	position: relative
+	top: 0
+	left: 0
+	width: 200%
+	height: 100%
+	+transition(.4s linear)
+
+.offer__backside-box
+	float: left
+	width: 50%
 	height: 100%
 	padding: 30px 30px 80px
+	background: #FFF
 	position: relative
 	+box
+
+.offer__content
+	width: 100%
+	height: 100%
+	+box
 	color: $dark
+	background: #FFF
 	font-size: 0
-	overflow: hidden
+	overflow: scroll
 	&:before
 		content: ""
 		display: inline-block
 		vertical-align: middle
 		width: 0
 		height: 100%
-	.btn_offer
-		position: absolute
-		left: 50%
-		bottom: 40px
-		min-width: 160px
-		margin-left: -80px
-		line-height: 38px
-		+fs(18)
 	.offer__list
 		display: inline-block
 		vertical-align: middle
@@ -395,6 +459,9 @@
 			&:last-child
 				border-bottom: none
 				margin-bottom: 0
+			&:hover
+				a
+					color: #00baee
 		span
 			display: inline-block
 			width: 100%
@@ -411,7 +478,6 @@
 		line-height: 1.2
 		+fs(12)
 		margin: 15px 0
-
 	.price
 		float: right
 		padding-right: 12px
@@ -421,12 +487,27 @@
 			display: block
 			+s(rub)
 			position: absolute
-			top: 4px
+			top: 2px
 			right: 0
 
+	.offer__slide-more
+		width: 100%
+		height: 100%
+
+.offer__back
+	position: absolute
+	bottom: 18px
+	left: 0
+	width: 100%
+	display: block
+	text-align: center
+	+fs(12)
+	color: #BBB
+	&:hover
+		color: #00baee
 
 
-.offers__hint
+.offer__hint
 	display: block
 	text-align: center
 	margin-top: 40px
@@ -526,16 +607,53 @@
 		left: 50%
 		margin-left: 48px
 	.share__center
-		display: block
-		margin: auto
-		line-height: 60px
-		text-decoration: none
-		color: #FFF
-		+fs(28)
 		text-align: center
+		a
+			display: inline-block
+			margin: auto
+			line-height: 60px
+			text-decoration: none
+			color: #FFF
+			+fs(28)
+			text-align: center
+			position: relative
+			z-index: 1
+			top: 3px
+			&:hover
+				.heart
+					-webkit-animation: none
+					-moz-animation: none
+					-o-animation: none
+					animation: none
+					+transform(scale(1.05))
+					+transition(transform .2s ease)
+			&:active
+				.heart
+					-webkit-animation: none
+					-moz-animation: none
+					-o-animation: none
+					animation: none
+					+transform(scale(1))
+					+transition(.1s ease)
+	.heart
+		content: ""
+		display: block
+		position: absolute
+		z-index: -1
+		top: 0
+		left: 50%
+		margin-left: -39px
 		+s(share)
-		position: relative
-		top: 3px
+		-webkit-animation: beat .7s ease 0s infinite alternate
+		-moz-animation: beat .7s ease 0s infinite alternate
+		-o-animation: beat .7s ease 0s infinite alternate
+		animation: beat .7s ease 0s infinite alternate
+
++keyframes (beat)
+	0%, 100%
+		+transform(scale(1))
+	50%
+		+transform(scale(1.05))
 
 .contacts
 	+fs(20)

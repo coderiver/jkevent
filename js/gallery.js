@@ -34,9 +34,10 @@ jQuery(document).ready(function($){
 		var navigationAnchor = $(this);
 			direction = navigationAnchor.text(),
 			activeContainer = navigationAnchor.parents('nav').eq(0).siblings('.cd-item-wrapper');
-		
+
 		( direction=="Next") ? showNextSlide(activeContainer) : showPreviousSlide(activeContainer);
 		updateNavigation(navigationAnchor.parents('.cd-item-navigation').eq(0), activeContainer);
+		return false;
 	});
 });
 
@@ -65,10 +66,10 @@ function showPreviousSlide(container) {
 	itemToBack.removeClass('cd-item-middle').addClass('cd-item-back');
 	itemToOut.removeClass('cd-item-back').addClass('cd-item-out');
 
-	//wait until itemToShow does'n have the 'hidden' class, then remove the move-right class 
+	//wait until itemToShow does'n have the 'hidden' class, then remove the move-right class
 	//in this way, transition works also in the way back
 	var stop = setInterval(checkClass, 100);
-	
+
 	function checkClass(){
 		if( !itemToShow.hasClass('hidden') ) {
 			itemToShow.removeClass('move-right');
