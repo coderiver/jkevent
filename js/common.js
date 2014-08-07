@@ -7,13 +7,17 @@ head.ready(function() {
 	$('#fullpage').fullpage({
 		verticalCentered: false,
 		easing: 'easeInQuart',
+		// verticalCentered: true,
 		menu: true,
 		// navigation: true,
-		// css3: true,
-		scrollingSpeed: 700,
+		css3: true,
+		scrollingSpeed: 500,
 		scrollOverflow: true,
-		// paddingTop: '140px',
-		// fixedElements: '.header',
+		// touchSensitivity: 15,
+		// paddingTop: '103px',
+		// paddingBottom: '83px',
+		// fixedElements: '.header, .nav, .nav__left, nav__right',
+		normalScrollElements: '.reviews, .review__text, .offer',
 		anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'],
 		menu: '.js-nav',
 
@@ -22,18 +26,18 @@ head.ready(function() {
 				header = $('.header'),
 				footer = $('.footer');
 
-			if(index == '2' || index == '3' || index == '4' || index == '5') {
+			if (index == '2' || index == '3' || index == '4' || index == '5') {
 				paginator.addClass('is-dark');
 				header.addClass('is-small');
-				header.find('.header__logo').fadeOut();
-				header.find('.header__logo-small').fadeIn();
+				// header.find('.header__logo').fadeOut();
+				// header.find('.header__logo-small').fadeIn();
 				footer.slideDown();
 			}
 			else {
 				paginator.removeClass('is-dark');
 				header.removeClass('is-small');
-				header.find('.header__logo').fadeIn();
-				header.find('.header__logo-small').fadeOut();
+				// header.find('.header__logo').fadeIn();
+				// header.find('.header__logo-small').fadeOut();
 				footer.slideUp();
 			};
 
@@ -46,6 +50,10 @@ head.ready(function() {
 				header.find('.social').removeClass('is-visible');
 			};
 
+			if (index == '2' || index == '3' || index == '4' && index++) {
+				header.find('.header__logo').addClass('is-rotate');
+			}
+
 		},
 
 		// onLeave: function(index, nextIndex, direction){
@@ -53,11 +61,11 @@ head.ready(function() {
 		// 		prevPage = $('.section.active').prev('.section'),
 		// 		nextPage = $('.section.active').next('.section');
 
-		// 	if (index++) {
-		// 		activePage.addClass('is-visible');
-		// 		prevPage.addClass('is-hidden');
+		// 	if (direction =='down') {
+		// 		// activePage.addClass('is-visible');
+		// 		prevPage.addClass('is-hidden')
 		// 	}
-		// 	else if (index--) {
+		// 	else if (direction =='up') {
 		// 		activePage.removeClass('is-hidden');
 		// 		// nextPage.removeClass('is-visible');
 		// 		// prevPage.addClass('is-hidden');

@@ -2,8 +2,8 @@
 =trans
 	+transition(all .15s linear)
 .page
-	min-height: 100%
-	position: relative
+	// min-height: 100%
+	// position: relative
 	// position: absolute
 	// top: 0
 	// left: 0
@@ -11,10 +11,10 @@
 	// width: 100%
 	// opacity: 1
 	// +transform(translateY(100%))
+	overflow: scroll
 	&.page_first
 		background: url('../img/firstpage.jpg') 50% 0 no-repeat
 		background-size: cover
-
 	&.page_last
 		background: url('../img/lastpage.jpg') 50% 0 no-repeat
 		background-size: cover
@@ -22,7 +22,8 @@
 		+transform(translateY(0))
 	&.is-hidden
 		+transition(all 1s linear)
-		opacity: 0
+		position: relative
+		top: 100%
 
 .is-hidden
 	display: none
@@ -42,12 +43,13 @@
 		top: 0
 		left: 50%
 		margin-left: -70px
-	.header__logo-small
-		display: block
-		+s(logo-small)
-		float: left
-		margin-right: 23px
-		display: none
+		+transition(all 0.5s ease)
+	// .header__logo-small
+	// 	display: block
+	// 	+s(logo-small)
+	// 	float: left
+	// 	margin-right: 23px
+	// 	display: none
 	.header__tel
 		&.is-hidden
 			width: 0
@@ -73,6 +75,8 @@
 			float: left
 			font-size: 0
 			line-height: 1
+			padding-left: 91px
+			white-space: nowrap
 			li
 				line-height: 68px
 				margin-right: 20px
@@ -86,7 +90,7 @@
 					top: 3px
 		.nav__left,
 		.nav__right
-			float: left
+			display: inline-block
 			position: static
 			margin: 0 20px 0 0
 			text-align: left
@@ -97,6 +101,9 @@
 		.social
 			display: inline-block
 			margin: 0 0 0 5px
+
+		.header__logo
+			+transform(translateY(-36px) translateX(-456px) scale(0.4857) rotate(-360deg))
 
 .nav
 	position: relative
@@ -300,67 +307,45 @@
 			text-decoration: underline
 
 
-.gallery-wrap
-	position: relative
-.gallery
-	position: relative
-	width: 725px
-	height: 483px
-	margin: auto
-	.gallery__slide
-		position: relative
-		width: 100%
-		height: 100%
-		margin: auto
-		box-shadow: 0 0 35px 0 rgba(6,6,6,.15)
-		img
-			display: block
-			max-width: 100%
-	.gallery__slide-cap
-		+fs(12)
-		+osl
-		line-height: 50px
-		height: 50px
-		p
-			display: inline-block
-			vertical-align: middle
-			width: 100%
-			line-height: 1.2
-		strong
-			+fs(14)
-			+osr
-			margin-right: 20px
-	&.gallery_video
-		width: 800px
-		height: auto
-		.gallery__slide
-			box-shadow: none
-			iframe
-				box-shadow: 0 0 35px 0 rgba(6,6,6,.15)
+// .gallery-wrap
+// 	position: relative
+// .gallery
+// 	position: relative
+// 	width: 725px
+// 	height: 483px
+// 	margin: auto
+// 	.gallery__slide
+// 		position: relative
+// 		width: 100%
+// 		height: 100%
+// 		margin: auto
+// 		box-shadow: 0 0 35px 0 rgba(6,6,6,.15)
+// 		img
+// 			display: block
+// 			max-width: 100%
+// 	.gallery__slide-cap
 
-.gallery__like
-	position: absolute
-	bottom: 14px
-	right: 14px
-.gallery__like-vk,
-.gallery__like-fb
-	margin-top: 10px
-	float: right
-	clear: right
+// 	&.gallery_video
+// 		width: 800px
+// 		height: auto
+// 		.gallery__slide
+// 			box-shadow: none
+// 			iframe
+// 				box-shadow: 0 0 35px 0 rgba(6,6,6,.15)
 
-.gallery__prev,
-.gallery__next
-	position: absolute
-	top: 215px
-	display: block
-	&:hover
-		opacity: .8
-.gallery__prev,
-	+s(prev)
-	left: 13px
-.gallery__next
-	+s(next)
-	right: 13px
+// .gallery__prev,
+// .gallery__next
+// 	position: absolute
+// 	top: 215px
+// 	display: block
+// 	&:hover
+// 		opacity: .8
+// .gallery__prev,
+// 	+s(prev)
+// 	left: 13px
+// .gallery__next
+// 	+s(next)
+// 	right: 13px
 
 .offer
 	margin-top: 10px
@@ -387,7 +372,8 @@
 		-moz-transform-style: preserve-3d
 		transform-style: preserve-3d
 		+gpu
-		&:hover
+	&:hover
+		.offer__container
 			+transform(rotateY(180deg))
 
 	.offer__front
@@ -439,7 +425,9 @@
 	color: $dark
 	background: #FFF
 	font-size: 0
-	overflow: scroll
+	overflow: hidden
+	position: relative
+	z-index: 10
 	&:before
 		content: ""
 		display: inline-block
@@ -524,7 +512,7 @@
 
 .reviews
 	color: $dark
-	width: 550px
+	width: 600px
 	margin: auto
 	+osl
 	.reviews__item
@@ -558,12 +546,29 @@
 			left: 50%
 			margin-left: -42.5px
 	.reviews__text
-		+fs(28)
+		+fs(26)
 		line-height: 1.214
 		display: block
 		text-align: center
+		height: 190px
+		padding: 0 10px
+		box-shadow: 0 0 20px 0 #fff inset
+		-ms-overflow-x: hidden
+		overflow-x: hidden
+		-ms-overflow-y: scroll
+		overflow-y: scroll
+		+scrollbar
+			width: 3px
+			height: 3px
+			background: rgba(255,255,255,0)
+		+scrollbar-thumb
+			background: rgba(0, 0, 0, 0.1)
+		// +scrollbar-track-piece
+		// 	border-radius: 2px
+		// 	width: 1px
+
 	.reviews__pagi
-		margin: 65px auto 0
+		margin: 30px auto 0
 		font-size: 0
 		text-align: center
 		li
@@ -723,37 +728,112 @@
 	width: 980px
 	margin: auto
 
-.photogallery
-	width: 725px
-	height: 483px
-	margin: auto
-	li
-		width: 100% !important
-		margin: 0 !important
-	.photogallery__wrap
-		width: 100%
-	.photogallery__item
-		width: 100%
-		img
-			box-shadow: 0 0 35px 0 rgba(6,6,6,.15)
-	// .photogallery__prev
-	// 	+s(prev)
-	// .photogallery__next
-	// 	+s(next)
-	.photogallery__nav
-		// li:nth-child(1) a
-		// 	left: -100px
-		// li:nth-child(2) a
-		// 	right: -100px
-		// .cd-img-replace
-		// 	+s(next)
-			// &:hover
-			// background-color: transparent
-
-
-
-
-
+.popup
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	z-index: 1000
+	background: #56daff
+	text-align: center
+	+vertical
+.popup__form
+	display: inline-block
+	vertical-align: middle
+	width: 535px
+	height: 535px
+	background: #fff
+	+fs(18)
+	text-align: center
+	line-height: 1.5
+	+box
+	padding: 70px
+	.popup__form-top
+		display: inline-block
+		label
+			text-align: right
+			+osl
+	input[type="text"]
+		// display: block
+		background: #fff
+		-webkit-box-shadow: none
+		box-shadow: none
+		outline: none
+		border-bottom: 1px solid #f2f2f2
+		width: 200px
+		margin-bottom: 15px
+		text-align: left
+		+fs(18)
+		+osl
+		&:focus
+			border-color: #cfcecb
+	label
+		display: block
+	input[type="radio"]
+		margin: 0 0 15px 0
+		opacity: 0
+		+ span
+			position: relative
+			display: inline-block
+			line-height: 1
+			padding-left: 20px
+			i
+				+fs(14)
+				+osl
+				font-style: normal
+			&:before
+				content: ""
+				display: block
+				width: 20px
+				height: 20px
+				border-radius: 50%
+				background: #e6e6e6
+				border: 1px solid #dadada
+				position: absolute
+				top: 7px
+				left: -14px
+			&:after
+				content: ""
+				display: none
+				width: 10px
+				height: 10px
+				border-radius: 50%
+				background: #00baee
+				border: 1px solid #05AFDE
+				position: absolute
+				z-index: 2
+				top: 12px
+				left: -9px
+		&:checked
+			+ span
+				color: #00baee
+				&:after
+					display: block
+	.popup__form-middle
+		text-align: left
+	.btn_submit
+		display: inline-block
+		padding: 0 20px
+	.popup__form-close
+		display: block
+		color: #BBB
+		+fs(14)
+		margin-top: 15px
+		&:hover
+			color: #00baee
+	.popup__form-price
+		float: right
+		display: inline-block
+		padding-right: 15px
+		position: relative
+		&:after
+			content: ""
+			display: block
+			+s(rub)
+			position: absolute
+			top: 0
+			right: 0
 
 
 

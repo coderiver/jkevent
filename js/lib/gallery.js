@@ -18,15 +18,15 @@ jQuery(document).ready(function($){
 	//on desktop - update navigation visibility when hovering over the gallery images
 	galleryItems.hover(
 		//when mouse enters the element, show slider navigation
-		function(){
-			$this = $(this).children('.cd-item-wrapper');
-			updateNavigation($this.siblings('nav').find('.cd-item-navigation').eq(0), $this);
-		},
+		// function(){
+		// 	$this = $(this).children('.cd-item-wrapper');
+		// 	updateNavigation($this.siblings('nav').find('.cd-item-navigation').eq(0), $this);
+		// },
 		//when mouse leaves the element, hide slider navigation
-		function(){
-			$this = $(this).children('.cd-item-wrapper');
-			hideNavigation($this.siblings('nav').find('.cd-item-navigation').eq(0));
-		}
+		// function(){
+		// 	$this = $(this).children('.cd-item-wrapper');
+		// 	hideNavigation($this.siblings('nav').find('.cd-item-navigation').eq(0));
+		// }
 	);
 
 	//change image in the slider
@@ -85,6 +85,6 @@ function updateNavigation(navigation, container) {
 	(isPrevActive) ? navigation.find('a').eq(0).addClass('visible') : navigation.find('a').eq(0).removeClass('visible');
 }
 
-function hideNavigation(navigation) {
-	navigation.find('a').removeClass('visible');
-}
+// function hideNavigation(navigation) {
+// 	navigation.find('a').removeClass('visible');
+// }
