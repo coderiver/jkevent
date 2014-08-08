@@ -94,7 +94,7 @@
 			position: static
 			margin: 0 20px 0 0
 			text-align: left
-		.nav__left
+		// .nav__left
 
 		.nav__right
 			margin-right: 0
@@ -729,28 +729,48 @@
 	margin: auto
 
 .popup
+	opacity: 0
 	position: fixed
 	top: 0
 	right: 0
 	bottom: 0
 	left: 0
 	z-index: 1000
-	background: #56daff
+	// background: #56daff
 	text-align: center
 	+vertical
+	+transition(0.4s 0.6s linear)
+	&.is-visible
+		opacity: 1
+		+transition(0.4s linear)
+		.popup__circle1
+			+transition(0.2s 0.4s ease)
+			+transform(scale(1.7))
+		.popup__circle2
+			+transform(scale(2.4))
+			+transition(0.4s 0.4s ease)
+		.popup__circle3
+			+transform(scale(5))
+			+transition(0.6s 0.4s linear)
+
 .popup__form
 	display: inline-block
 	vertical-align: middle
 	width: 535px
 	height: 535px
+	border-radius: 50%
 	background: #fff
 	+fs(18)
 	text-align: center
 	line-height: 1.5
 	+box
 	padding: 70px
+	position: relative
+	// opacity: 0
+	+transition(0.4s ease)
 	.popup__form-top
 		display: inline-block
+		margin-bottom: 50px
 		label
 			text-align: right
 			+osl
@@ -762,7 +782,7 @@
 		outline: none
 		border-bottom: 1px solid #f2f2f2
 		width: 200px
-		margin-bottom: 15px
+		margin-left: 5px
 		text-align: left
 		+fs(18)
 		+osl
@@ -770,8 +790,10 @@
 			border-color: #cfcecb
 	label
 		display: block
+		margin-bottom: 15px
+		&:last-child
+			margin-bottom: 0
 	input[type="radio"]
-		margin: 0 0 15px 0
 		opacity: 0
 		+ span
 			position: relative
@@ -812,6 +834,16 @@
 					display: block
 	.popup__form-middle
 		text-align: left
+		position: relative
+		margin-bottom: 30px
+		&:before
+			content: ""
+			display: block
+			height: 100%
+			border-left: 1px solid #cfcecb
+			position: absolute
+			top: 0
+			right: 30%
 	.btn_submit
 		display: inline-block
 		padding: 0 20px
@@ -824,16 +856,42 @@
 			color: #00baee
 	.popup__form-price
 		float: right
+		text-align: right
 		display: inline-block
 		padding-right: 15px
+		margin-top: 63px
 		position: relative
 		&:after
 			content: ""
 			display: block
 			+s(rub)
 			position: absolute
-			top: 0
+			top: 7px
 			right: 0
 
+	.popup__circle1,
+	.popup__circle2,
+	.popup__circle3
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		border-radius: 50%
+		+transform(scale(1))
+	.popup__circle1
+		z-index: -1
+		background: #89e5ff
+		+transition(0.2s ease)
+	.popup__circle2
+		z-index: -2
+		background: #6fdfff
+		+transition(0.4s ease)
+	.popup__circle3
+		z-index: -3
+		background: #56daff
+		+transition(0.6s linear)
 
-
+.noscroll
+	overflow: hidden

@@ -50,9 +50,9 @@ head.ready(function() {
 				header.find('.social').removeClass('is-visible');
 			};
 
-			if (index == '2' || index == '3' || index == '4' && index++) {
-				header.find('.header__logo').addClass('is-rotate');
-			}
+			// if (index == '2' || index == '3' || index == '4' && index++) {
+			// 	header.find('.header__logo').addClass('is-rotate');
+			// }
 
 		},
 
@@ -89,6 +89,25 @@ head.ready(function() {
 		setTimeout(function() {
 			slider.css('left', '0');
 		}, 400);
+	});
+
+	//show popup
+	$('.btn.btn_offer').click(function(event) {
+		$('.popup').show();
+		$('body').addClass('noscroll');
+		setTimeout(function() {
+			$('.popup').addClass('is-visible');
+		}, 10);
+		return false;
+	});
+	//hide popup
+	$('.popup__form-close').click(function(event) {
+		$('.popup').removeClass('is-visible');
+		setTimeout(function() {
+			$('.popup').hide();
+			$('body').removeClass('noscroll');
+		}, 1000);
+		return false;
 	});
 
 });
