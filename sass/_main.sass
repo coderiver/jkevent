@@ -11,7 +11,7 @@
 	// width: 100%
 	// opacity: 1
 	// +transform(translateY(100%))
-	overflow: scroll
+	// overflow: scroll
 	&.page_first
 		background: url('../img/firstpage.jpg') 50% 0 no-repeat
 		background-size: cover
@@ -434,6 +434,8 @@
 		vertical-align: middle
 		width: 0
 		height: 100%
+	&.offer__content_more
+		// display: none
 	.offer__list
 		display: inline-block
 		vertical-align: middle
@@ -744,14 +746,14 @@
 		opacity: 1
 		+transition(0.4s linear)
 		.popup__circle1
-			+transition(0.2s 0.4s ease)
+			+transition(0.4s 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275))
 			+transform(scale(1.7))
 		.popup__circle2
 			+transform(scale(2.4))
-			+transition(0.4s 0.4s ease)
+			+transition(1s 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275))
 		.popup__circle3
 			+transform(scale(5))
-			+transition(0.6s 0.4s linear)
+			+transition(2s 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275))
 
 .popup__form
 	display: inline-block
