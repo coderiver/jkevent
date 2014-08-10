@@ -201,21 +201,21 @@
 		// animation: cd-fade-in 0.4s
 	li
 		&:nth-child(1) a
-			left: -100px
+			left: -80px
 			-webkit-transform: translateY(-50%) rotate(180deg)
 			-moz-transform: translateY(-50%) rotate(180deg)
 			-ms-transform: translateY(-50%) rotate(180deg)
 			-o-transform: translateY(-50%) rotate(180deg)
 			transform: translateY(-50%) rotate(180deg)
 		&:nth-child(2) a
-			right: -100px
+			right: -80px
 .gallery_video
 	.d-item-navigation
 		li
 			&:nth-child(1) a
-				left: -60px
+				left: -40px
 			&:nth-child(2) a
-				right: -60px
+				right: -40px
 
 .no-csstransitions .cd-item-navigation
 	// display: none
@@ -280,20 +280,34 @@
 	width: 725px
 	height: 483px
 	margin: auto
+	+rh(750)
+		width: 675px
+		height: 450px
 	&.gallery_video
 		width: 800px
+		height: 450px
+		+rh(750)
+			width: 700px
+			height: 400px
 	.gallery__pic
 		width: 725px
 		height: 483px
 		overflow: hidden
+		+rh(750)
+			width: 675px
+			height: 450px
 		// box-shadow: 0 0 35px 0 rgba(6,6,6,.15)
 		img
 			display: block
 			max-width: 100%
 	.gallery__video
 		width: 800px
+		height: 450px
 		iframe
 			display: block
+		+rh(750)
+			width: 700px
+			height: 400px
 	.gallery__video-cap
 		position: absolute
 		bottom: -50px
