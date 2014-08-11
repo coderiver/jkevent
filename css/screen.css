@@ -234,7 +234,7 @@ html, body { margin: 0; padding: 0; overflow: hidden; -webkit-tap-highlight-colo
 .person .person__question { display: block; font-size: 12px; font-size: 1.2rem; color: #00baee; margin-top: 5px; text-decoration: none; }
 .person .person__question:hover { text-decoration: underline; }
 
-.offer { margin-top: 10px; float: left; margin: 10px 13px 30px; perspective: 1100px; }
+.offer { margin-top: 10px; float: left; margin: 10px 13px 30px; -webkit-perspective: 1000px; -moz-perspective: 1000px; perspective: 1000px; }
 @media only screen and (max-height: 750px) { .offer { margin-bottom: 20px; } }
 .offer .offer__title { font-size: 24px; font-size: 2.4rem; font-weight: normal; color: #444444; margin-bottom: 30px; text-align: center; }
 @media only screen and (max-height: 750px) { .offer .offer__title { margin-bottom: 20px; } }
