@@ -10,13 +10,6 @@ head.ready(function() {
 		normalScrollElements: '.reviews, .review__text, .offer, .gallery',
 		anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'],
 		menu: '.js-nav',
-		// autoScrolling: false,
-		// verticalCentered: true,
-		// navigation: true,
-		// touchSensitivity: 15,
-		// paddingTop: '103px',
-		// paddingBottom: '83px',
-		// fixedElements: '.header, .nav, .nav__left, nav__right',
 
 		afterLoad: function(anchorLink, index){
 			var paginator = $('.pagi'),
@@ -160,3 +153,5 @@ head.ready(function() {
 	};
 
 });
+
+$.validate();

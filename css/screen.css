@@ -25,6 +25,12 @@ html { font-size: 62.5%; }
 
 body { font-family: "Open Sans", sans-serif; font-weight: normal; font-size: 12px; line-height: 1.2; background: white; }
 
+.has-error { color: red; }
+
+.error { border-color: red; }
+
+.form-error { display: none; }
+
 .l-center { width: 980px; margin: auto; }
 .header .l-center, .page_first .l-center, .footer__top .l-center { position: relative; }
 
@@ -361,10 +367,10 @@ html, body { margin: 0; padding: 0; overflow: hidden; -webkit-tap-highlight-colo
 
 .popup__form { display: inline-block; vertical-align: middle; width: 535px; height: 535px; border-radius: 50%; background: white; font-size: 18px; font-size: 1.8rem; text-align: center; line-height: 1.5; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 70px; position: relative; -webkit-transition: 0.4s ease; -moz-transition: 0.4s ease; -o-transition: 0.4s ease; transition: 0.4s ease; }
 .popup__form .popup__form-top { display: inline-block; margin-bottom: 50px; }
-.popup__form .popup__form-top label { text-align: right; font-family: "Open Sans", sans-serif; font-weight: 100; }
+.popup__form .popup__form-top label { text-align: right; }
 .popup__form input[type="text"] { background: white; -webkit-box-shadow: none; box-shadow: none; outline: none; border-bottom: 1px solid #f2f2f2; width: 200px; margin-left: 5px; text-align: left; font-size: 18px; font-size: 1.8rem; font-family: "Open Sans", sans-serif; font-weight: 100; }
 .popup__form input[type="text"]:focus { border-color: #cfcecb; }
-.popup__form label { display: block; margin-bottom: 15px; }
+.popup__form label { display: block; margin-bottom: 15px; font-family: "Open Sans", sans-serif; font-weight: 100; }
 .popup__form label:last-child { margin-bottom: 0; }
 .popup__form input[type="radio"] { opacity: 0; }
 .popup__form input[type="radio"] + span { position: relative; display: inline-block; line-height: 1; padding-left: 20px; }
@@ -373,7 +379,7 @@ html, body { margin: 0; padding: 0; overflow: hidden; -webkit-tap-highlight-colo
 .popup__form input[type="radio"] + span:after { content: ""; display: none; width: 10px; height: 10px; border-radius: 50%; background: #00baee; border: 1px solid #05afde; position: absolute; z-index: 2; top: 12px; left: -9px; }
 .popup__form input[type="radio"]:checked + span { color: #00baee; }
 .popup__form input[type="radio"]:checked + span:after { display: block; }
-.popup__form textarea { background: white; outline: none; background: white; width: 100%; height: 190px; padding: 5px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; border: 1px solid #f2f2f2; -webkit-border-radius: 5px; border-radius: 5px; font-size: 16px; font-size: 1.6rem; font-family: "Open Sans", sans-serif; font-weight: 100; }
+.popup__form textarea { display: inline-block; vertical-align: top; position: relative; top: 5px; background: white; outline: none; background: white; height: 190px; width: 300px; padding: 5px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; border: 1px solid #f2f2f2; -webkit-border-radius: 5px; border-radius: 5px; font-size: 16px; font-size: 1.6rem; font-family: "Open Sans", sans-serif; font-weight: 100; }
 .popup__form textarea:focus { border-color: #cfcecb; }
 .popup__form .popup__form-middle { text-align: left; position: relative; margin-bottom: 30px; }
 .popup__form .popup__form-bottom { position: absolute; width: 395px; bottom: 40px; }
@@ -398,3 +404,8 @@ html, body { margin: 0; padding: 0; overflow: hidden; -webkit-tap-highlight-colo
 .dove_middle { background: url('../img/icons-s79fb5bdedd.png') 0 -150px no-repeat; width: 54px; height: 59px; top: 18%; left: 57%; }
 
 .dove_bottom { background: url('../img/icons-s79fb5bdedd.png') 0 -368px no-repeat; width: 34px; height: 46px; top: 35.5%; left: 47%; }
+
+.after-submit { display: none; position: absolute; z-index: 10; top: 0; right: 0; bottom: 0; right: 0; font-size: 0; background: white; -webkit-border-radius: 50%; border-radius: 50%; }
+.after-submit:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
+.after-submit .after-submit__msg { padding: 70px; display: inline-block; vertical-align: middle; font-size: 16px; font-size: 1.6rem; font-family: "Open Sans", sans-serif; font-weight: 100; }
+.after-submit .btn { display: block; width: 100px; margin: 20px auto 0 auto; }

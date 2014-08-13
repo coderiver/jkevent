@@ -614,16 +614,23 @@
 <!-- BEGIN popup wedding -->
 <div id="wedding" class="popup" hidden>
 	<div class="popup__form">
-		<form>
+		<form method="post" name="wedding">
 			<div class="popup__form-top">
-				<label>Имя <input type="text"></label>
-				<label>Телефон <input type="text"></label>
-				<label>Почта <input type="text"></label>
+				<label>Имя <input type="text" name="name" data-validation="required"></label>
+				<label>Телефон <input type="text" name="phone" data-validation="number"></label>
+				<label>Почта <input type="text" name="email" data-validation="email"></label>
 			</div>
 
 			<div class="popup__form-middle">
-				<label><input type="radio" name="wedding" data-price="1" checked><span>Организация<br>свадьбы</span></label>
-					<div class="popup__form-price"><span class="value">от 60 000</span></div>
+				<label>
+					<input type="radio"
+							 name="service"
+							 data-price="1"
+							 value="Организация свадьбы"
+							 checked>
+					<span>Организация<br>свадьбы</span>
+				</label>
+				<div class="popup__form-price"><span class="value">от 60 000</span></div>
 			</div>
 
 			<div class="popup__form-bottom">
@@ -631,6 +638,12 @@
 				<a class="popup__form-close js-popup-close" href="#wedding">Назад</a>
 			</div>
 		</form>
+		<div class="after-submit">
+			<p class="after-submit__msg">
+				Спасибо, ваша заявка принята. Наш менеджер в ближайшее время свяжется с вами для уточнения деталей.
+				<a class="btn js-popup-close" href="#wedding">Назад</a>
+			</p>
+		</div>
 		<div class="popup__circle1"></div>
 		<div class="popup__circle2"></div>
 		<div class="popup__circle3"></div>
@@ -641,18 +654,37 @@
 <!-- BEGIN popup photo -->
 <div id="photo" class="popup" hidden>
 	<div class="popup__form">
-		<form>
+		<form method="post" name="photo">
 			<div class="popup__form-top">
-				<label>Имя <input type="text"></label>
-				<label>Телефон <input type="text"></label>
-				<label>Почта <input type="text"></label>
+				<label>Имя <input type="text" name="name" data-validation="required"></label>
+				<label>Телефон <input type="text" name="phone" data-validation="number"></label>
+				<label>Почта <input type="text" name="email" data-validation="email"></label>
 			</div>
 
 			<div class="popup__form-middle">
-				<label><input type="radio" name="photo" data-price="1" checked><span>Фотограф<br><i>8 часов</i></span></label>
-				<label><input type="radio" name="photo" data-price="2"><span>Фотограф<br><i>полный день</i></span></label>
-				<label><input type="radio" name="photo" data-price="3"><span>Два Фотографа<br><i>полный день</i></span></label>
-					<div class="popup__form-price"><span class="value">35 000</span></div>
+				<label>
+					<input type="radio"
+							 name="service"
+							 data-price="1"
+							 value="Фотограф на 8 часов"
+							 checked>
+					<span>Фотограф<br><i>8 часов</i></span>
+				</label>
+				<label>
+					<input type="radio"
+							 name="service"
+							 data-price="2"
+							 value="Фотограф на полный день">
+					<span>Фотограф<br><i>полный день</i></span>
+				</label>
+				<label>
+					<input type="radio"
+							 name="service"
+							 data-price="3"
+							 value="Два Фотографа на полный день">
+					<span>Два Фотографа<br><i>полный день</i></span>
+				</label>
+				<div class="popup__form-price"><span class="value">35 000</span></div>
 			</div>
 
 			<div class="popup__form-bottom">
@@ -660,6 +692,12 @@
 				<a class="popup__form-close js-popup-close" href="#photo">Назад</a>
 			</div>
 		</form>
+		<div class="after-submit">
+			<p class="after-submit__msg">
+				Спасибо, ваша заявка принята. Наш менеджер в ближайшее время свяжется с вами для уточнения деталей.
+				<a class="btn js-popup-close" href="#photo">Назад</a>
+			</p>
+		</div>
 		<div class="popup__circle1"></div>
 		<div class="popup__circle2"></div>
 		<div class="popup__circle3"></div>
@@ -670,16 +708,29 @@
 <!-- BEGIN popup video -->
 <div id="video" class="popup" hidden>
 	<div class="popup__form">
-		<form>
+		<form method="post" name="video">
 			<div class="popup__form-top">
-				<label>Имя <input type="text"></label>
-				<label>Телефон <input type="text"></label>
-				<label>Почта <input type="text"></label>
+				<label>Имя <input type="text" name="name" data-validation="required"></label>
+				<label>Телефон <input type="text" name="phone" data-validation="number"></label>
+				<label>Почта <input type="text" name="email" data-validation="email"></label>
 			</div>
 
 			<div class="popup__form-middle">
-				<label><input type="radio" name="video" data-price="1" checked><span>Оператор<br>и ассистент</span></label>
-				<label><input type="radio" name="video" data-price="2"><span>Два оператора<br>и асcистент</span></label>
+				<label>
+					<input type="radio"
+							 name="service"
+							 data-price="1"
+							 value="Оператор и ассистент"
+							 checked>
+					 <span>Оператор<br>и ассистент</span>
+				</label>
+				<label>
+					<input type="radio"
+							 name="service"
+							 data-price="2"
+							 value="Два оператора и асcистент">
+					<span>Два оператора<br>и асcистент</span>
+				</label>
 				<div class="popup__form-price"><span class="value">35 000</span></div>
 			</div>
 
@@ -688,6 +739,12 @@
 				<a class="popup__form-close js-popup-close" href="#video">Назад</a>
 			</div>
 		</form>
+		<div class="after-submit">
+			<p class="after-submit__msg">
+				Спасибо, ваша заявка принята. Наш менеджер в ближайшее время свяжется с вами для уточнения деталей.
+				<a class="btn js-popup-close" href="#video">Назад</a>
+			</p>
+		</div>
 		<div class="popup__circle1"></div>
 		<div class="popup__circle2"></div>
 		<div class="popup__circle3"></div>
@@ -698,20 +755,25 @@
 <!-- BEGIN popup ask -->
 <div id="ask" class="popup" hidden>
 	<div class="popup__form">
-		<form>
+		<form method="post" name="question">
 			<div class="popup__form-top">
-				<label>Имя <input type="text"></label>
-				<label>Телефон <input type="text"></label>
+				<label>Имя <input type="text" name="name" data-validation="required"></label>
+				<label>Телефон <input type="text" name="phone" data-validation="number"></label>
 			</div>
 
 			<div class="popup__form-middle">
-				<textarea></textarea>
+				<label>Вопрос <textarea name="question" data-validation="required"></textarea></label>
 			</div>
-
 			<div class="popup__form-bottom">
 				<button class="btn btn_submit" type="submit">Задать вопрос</button>
 				<a class="popup__form-close js-popup-close" href="#ask">Назад</a>
 			</div>
+		<div class="after-submit">
+			<p class="after-submit__msg">
+				Спасибо, ваш вопрос принят. Наш менеджер в ближайшее время свяжется с вами и ответит на ваш вопрос.
+				<a class="btn js-popup-close" href="#ask">Назад</a>
+			</p>
+		</div>
 		<div class="popup__circle1"></div>
 		<div class="popup__circle2"></div>
 		<div class="popup__circle3"></div>
