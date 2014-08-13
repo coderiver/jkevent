@@ -2,27 +2,28 @@
 =trans
 	+transition(all .15s linear)
 .page
-	// min-height: 100%
-	// position: relative
-	// position: absolute
-	// top: 0
-	// left: 0
-	// height: 100%
-	// width: 100%
-	// opacity: 1
-	// +transform(translateY(100%))
-	// overflow: scroll
 	background-color: #FFF
 	opacity: 1
 	position: relative
 	z-index: 1
 	&.page_first,
 	&.page_last
-		background-position: 50% 0
+		background-position: 50% 55%
 		background-repeat: no-repeat
 		-webkit-background-size: cover
 		-o-background-size: cover
 		background-size: cover
+	&.page_last
+		&:after
+			content: ""
+			display: block
+			position: absolute
+			z-index: -1
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			+g(rgba(0,0,0,0) 50%, rgba(0,0,0,0.45) 100%)
 	&.is-slidedown,
 	&.is-slideup
 		+transition(1s linear)
@@ -49,6 +50,7 @@
 		display: block
 		+s(logo)
 		position: absolute
+		z-index: 2
 		top: 0
 		left: 50%
 		margin-left: -70px
@@ -210,9 +212,19 @@
 .move-down
 	+s(down)
 	bottom: 115px
+	-webkit-animation: move-down 2s linear infinite
+	-moz-animation: move-down 2s linear infinite
+	-o-animation: move-down 2s linear infinite
+	animation: move-down 2s linear infinite
 .move-up
 	+s(up)
 	bottom: 29px
+
++keyframes(move-down)
+	0%, 100%
+		+transform(translateY(0))
+	50%, 75%
+		+transform(translateY(5px))
 
 .pagi
 	position: fixed
@@ -843,18 +855,29 @@
 				color: #00baee
 				&:after
 					display: block
+	textarea
+		background: #FFF
+		outline: none
+		background: #FFF
+		width: 100%
+		height: 190px
+		padding: 5px
+		+box
+		border: 1px solid #f2f2f2
+		-webkit-border-radius: 5px
+		border-radius: 5px
+		+fs(16)
+		+osl
+		&:focus
+			border-color: #cfcecb
 	.popup__form-middle
 		text-align: left
 		position: relative
 		margin-bottom: 30px
-		&:before
-			content: ""
-			display: block
-			height: 100%
-			border-left: 1px solid #cfcecb
-			position: absolute
-			top: 0
-			right: 30%
+	.popup__form-bottom
+		position: absolute
+		width: 395px
+		bottom: 40px
 	.btn_submit
 		display: inline-block
 		padding: 0 20px
@@ -866,19 +889,32 @@
 		&:hover
 			color: #00baee
 	.popup__form-price
-		float: right
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		width: 35%
 		text-align: right
-		display: inline-block
-		padding-right: 15px
-		margin-top: 63px
-		position: relative
-		&:after
+		border-left: 1px solid #cfcecb
+		&:before
 			content: ""
-			display: block
-			+s(rub)
-			position: absolute
-			top: 7px
-			right: 0
+			display: inline-block
+			vertical-align: middle
+			height: 100%
+			width: 0
+		.value
+			display: inline-block
+			vertical-align: middle
+			position: relative
+			padding-right: 15px
+			+fs(18)
+			&:after
+				content: ""
+				display: block
+				+s(rub)
+				position: absolute
+				top: 7px
+				right: 0
 
 	.popup__circle1,
 	.popup__circle2,
@@ -906,3 +942,19 @@
 
 .noscroll
 	overflow: hidden
+
+.dove
+	position: absolute
+	z-index: 2
+.dove_top
+	+s(dove-top)
+	top: 13%
+	left: 67%
+.dove_middle
+	+s(dove-middle)
+	top: 18%
+	left: 57%
+.dove_bottom
+	+s(dove-bottom)
+	top: 35.5%
+	left: 47%

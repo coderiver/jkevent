@@ -10,6 +10,7 @@ head.ready(function() {
 		normalScrollElements: '.reviews, .review__text, .offer, .gallery',
 		anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'],
 		menu: '.js-nav',
+		// autoScrolling: false,
 		// verticalCentered: true,
 		// navigation: true,
 		// touchSensitivity: 15,
@@ -20,30 +21,28 @@ head.ready(function() {
 		afterLoad: function(anchorLink, index){
 			var paginator = $('.pagi'),
 				header = $('.header'),
+				headerTel = header.find('.header__tel'),
+				headerSocialBtns = header.find('.social'),
 				footer = $('.footer');
 
 			if (index == '2' || index == '3' || index == '4' || index == '5') {
 				paginator.addClass('is-dark');
 				header.addClass('is-small');
-				// header.find('.header__logo').fadeOut();
-				// header.find('.header__logo-small').fadeIn();
 				footer.slideDown();
 			}
 			else {
 				paginator.removeClass('is-dark');
 				header.removeClass('is-small');
-				// header.find('.header__logo').fadeIn();
-				// header.find('.header__logo-small').fadeOut();
 				footer.slideUp();
 			};
 
 			if (index == 6) {
-				header.find('.header__tel').addClass('is-hidden');
-				header.find('.social').addClass('is-visible');
+				headerTel.addClass('is-hidden');
+				headerSocialBtns.addClass('is-visible');
 			}
 			else {
-				header.find('.header__tel').removeClass('is-hidden');
-				header.find('.social').removeClass('is-visible');
+				headerTel.removeClass('is-hidden');
+				headerSocialBtns.removeClass('is-visible');
 			};
 
 		},
@@ -120,24 +119,44 @@ head.ready(function() {
 		});
 	};
 
-
 	//show popup
-	$('.btn.btn_offer').click(function(event) {
-		$('.popup').show();
+	$('.js-popup-open').click(function(event) {
+		iniitialObject = $(this);
+		targetPopup = $($(this).attr('href'));
+
+		targetPopup.show();
+		switchPriceValue();
+
+		targetPopup.find('input[type="radio"]').click(function(event) {
+			switchPriceValue();
+		});
+
 		$('body').addClass('noscroll');
 		setTimeout(function() {
-			$('.popup').addClass('is-visible');
+			targetPopup.addClass('is-visible');
 		}, 10);
 		return false;
 	});
 	//hide popup
-	$('.popup__form-close').click(function(event) {
-		$('.popup').removeClass('is-visible');
+	$('.js-popup-close').click(function(event) {
+		var	targetPopup = $($(this).attr('href'));
+
+		targetPopup.removeClass('is-visible');
 		setTimeout(function() {
-			$('.popup').hide();
+			targetPopup.hide();
 			$('body').removeClass('noscroll');
 		}, 1000);
 		return false;
 	});
+
+	//change price value in popup form on click on radio buttons
+	function switchPriceValue() {
+		var currentOffer = iniitialObject.parents('.offer'),
+			priceValue = targetPopup.find('.value'),
+			checkedRadioButton = targetPopup.find('input[type="radio"]:checked').data('price'),
+			targetPriceVariant = currentOffer.find('.js-price' + checkedRadioButton).text();
+
+		priceValue.text(targetPriceVariant);
+	};
 
 });
