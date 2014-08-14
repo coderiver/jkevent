@@ -152,6 +152,32 @@ head.ready(function() {
 		priceValue.text(targetPriceVariant);
 	};
 
+	$('.btn_submit').click(function(event) {
+		// event.preventDefault();
+		// setTimeout(function(){
+		// 	if($('.has-error').length){
+		// 		alert('has-error')
+		// 	}
+		// 	else{	
+		// 		event.preventDefault();
+		// 		return false;
+		// 		//$(this).parents('form').ajaxSubmit({url: '/api.php', type: 'post'});
+		// 	}
+		// }, 300);
+
+	});
+
+	$('form').ajaxForm(function() { 
+		alert('a');
+	}); 
+
 });
 
-$.validate();
+$.validate({
+	onSuccess : function() {
+      //alert('The form is valid!');
+      //console.log(this);
+      $('#photo').ajaxSubmit({url: '/api.php', type: 'post'});
+      return false; // Will stop the submission of the form
+    }
+});

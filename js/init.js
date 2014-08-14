@@ -5,4 +5,5 @@ head.load("js/lib/jquery.js",
 		  "js/lib/jquery.slimscroll.min.js",
 		  "js/lib/jquery.fullPage.min.js",
 		  "js/lib/jquery.form-validator.min.js",
+		  "js/lib/jquery.form.js",
 		  "js/common.js");
