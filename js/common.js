@@ -177,7 +177,9 @@ $.validate({
 	onSuccess : function() {
       //alert('The form is valid!');
       //console.log(this);
-      $('#photo').ajaxSubmit({url: '/api.php', type: 'post'});
+      $('form:visible').ajaxSubmit({url: '/api.php', type: 'post', success:  function(){
+      	$('.after-submit').show();
+      }});
       return false; // Will stop the submission of the form
     }
 });
